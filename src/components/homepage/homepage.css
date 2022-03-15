@@ -1,0 +1,95 @@
+
+.homepage-main{
+    width: 100%;
+    padding: 2rem 3rem;
+    padding-top: 2rem
+}
+
+.hero{
+    display: flex;
+    position: relative;
+}
+
+.hero > img{
+    width: 100%;
+    border-radius: 12px;
+}
+
+.hero > a > button{
+    position: absolute;
+    top: 63%;
+    left: 5.2rem;
+    width: 17rem;
+    height: 5rem;
+}
+
+.hero > button:hover{
+    border: 1px solid #7575f1
+}
+
+.feature-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;   
+    margin-bottom: 4rem;
+}
+
+.feature-main > h2 {
+    margin: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--black);
+}
+
+.feature-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature{
+    display: flex;
+    align-items: center;
+    background-color: var(--xlight-blue);
+    width: 30rem;
+    height: 10rem;
+    justify-content: center;
+    text-align: center;
+    margin: 1.5rem 1.2rem;
+    border-radius: 4px;
+}
+
+.feature > i{
+    font-size: 4.5rem;
+    color:var(--primary-color);
+    margin-right: 1.5rem;
+    margin-left: 1rem;
+}
+
+.feature > p {
+    font-size: 2rem;
+    width: 20rem;
+}
+
+/*----- category -----*/
+
+.category .category-card{
+    height: 30rem
+}
+
+.category .category-card:hover{
+    box-shadow: var(--hover-box-shadow);
+}
+
+.card-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.popular-purchase{
+    height: 31.5rem;
+}
+
+

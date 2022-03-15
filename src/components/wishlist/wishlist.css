@@ -1,0 +1,15 @@
+.wishlist-main{
+    margin-top: 2.5rem;
+}
+
+.wishlist-card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, max-content));
+    grid-gap: 1.6rem;
+    padding: 0;
+    justify-content: center;
+}
+
+.heart-select > i{
+    color: var(--red);
+}

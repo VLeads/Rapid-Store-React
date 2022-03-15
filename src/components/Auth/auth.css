@@ -1,0 +1,20 @@
+.auth-container{
+    margin: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-form{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.auth-alternative{
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+}
+
+.auth-alternative:hover{
+    color: var(--primary-color)
+}

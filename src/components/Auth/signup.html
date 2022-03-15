@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://rapidui.netlify.app/styles/main.css" />
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="stylesheet" href="./auth.css" />
+
+    <title>Shop | Rapid Store</title>
+  </head>
+  <body>
+    <div class="sub-nav">
+      <div class="left">
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Order Tracking</a>
+      </div>
+      <div class="right">
+        <span>Need help? Call Us: 000 000 0000</span>
+        <a href="#">Contact Us</a>
+        <a href="https://github.com/vleads"
+          ><i class="fab fa-github" aria-hidden="true"></i
+        ></a>
+        <a href="https://twitter.com/vishalk01234"
+          ><i class="fab fa-twitter" aria-hidden="true"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/vishalkumar28/"
+          ><i class="fab fa-linkedin" aria-hidden="true"></i
+        ></a>
+        <a href="mailto:leader.vishalkumar@gmail.com"
+          ><i class="fas fa-envelope" aria-hidden="true"></i
+        ></a>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <a class="navbar-logo" href="../../index.html">
+        <img src="../../assets/img/rapidstore.png" alt="rapid store" />
+      </a>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="./login.html" class="btn btn-primary">Login</a>
+        </li>
+        <li>
+          <a href="../wishlist/wishlist.html"
+            ><span class="badge-icon">
+              <span class="badge red">20+</span>
+              <i class="far fa-heart"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="../cart/cart.html"
+            ><span class="badge-icon">
+              <span class="badge blue">5</span>
+              <i class="far fa-shopping-cart"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="auth-container">
+      <form class="card-vertical signup-form">
+        <h3>Signup</h3>
+
+        <div class="input-group-parent">
+          <div class="input-group">
+            <label>Email address</label>
+            <input
+              class="input-box"
+              type="email"
+              placeholder="vishal@mail.com"
+            />
+          </div>
+
+          <div class="input-group">
+            <label> Password </label>
+            <input class="input-box" type="password" placeholder="******" />
+          </div>
+
+          <div class="select-box">
+            <input type="checkbox" name="accept" />
+            <label for="accept"
+              >I accept all <a href="">terms and conditions</a></label
+            >
+          </div>
+
+          <button class="btn btn-primary">Create New Account</button>
+          <a href="./login.html" class="auth-alternative">
+            Already have an account &nbsp ></a
+          >
+        </div>
+      </form>
+    </main>
+    <!-- ---------- footer ---------- -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer__item">
+          <h4>Account</h4>
+          <ul class="footer__list">
+            <li class="footer__list-item"><a href="#">My Account</a></li>
+            <li class="footer__list-item"><a href="#">Wishlist</a></li>
+            <li class="footer__list-item"><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer__item">
+          <h4>Help</h4>
+          <ul class="footer__list">
+            <li class="footer__list-item"><a href="#">FAQ</a></li>
+            <li class="footer__list-item"><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer__item">
+          <h4>Contact Us</h4>
+          <ul class="footer__list">
+            <li class="footer__list-item">
+              <a href="https://www.linkedin.com/in/vishalkumar28/">LinkedIn</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="https://github.com/vleads">Github</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="https://twitter.com/vishalk01234">Twitter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-rights">&copy; 2022 Rapid Store. All Rights Reserved</p>
+    </footer>
+
+    <script src="https://rapidui.netlify.app/js/main.js"></script>
+  </body>
+</html>

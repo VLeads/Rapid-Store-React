@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://rapidui.netlify.app/styles/main.css" />
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="stylesheet" href="./productpage.css" />
+
+    <title>Shop | Rapid Store</title>
+  </head>
+
+  <body>
+    <div class="page-layout">
+      <div class="sub-nav">
+        <div class="left">
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Order Tracking</a>
+        </div>
+        <div class="right">
+          <span>Need help? Call Us: 000 000 0000</span>
+          <a href="#">Contact Us</a>
+          <a href="https://github.com/vleads"
+            ><i class="fab fa-github" aria-hidden="true"></i
+          ></a>
+          <a href="https://twitter.com/vishalk01234"
+            ><i class="fab fa-twitter" aria-hidden="true"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/vishalkumar28/"
+            ><i class="fab fa-linkedin" aria-hidden="true"></i
+          ></a>
+          <a href="mailto:leader.vishalkumar@gmail.com"
+            ><i class="fas fa-envelope" aria-hidden="true"></i
+          ></a>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <a class="navbar-logo" href="../../index.html">
+          <img src="../../assets/img/rapidstore.png" alt="rapid store" />
+        </a>
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." />
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="../Auth/login.html" class="btn btn-primary">Login</a>
+          </li>
+          <li>
+            <a href="../Wishlist/wishlist.html"
+              ><span class="badge-icon">
+                <span class="badge red">20+</span>
+                <i class="far fa-heart"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><span class="badge-icon">
+                <span class="badge blue">5</span>
+                <i class="far fa-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <aside class="sidebar-container">
+        <div class="sidebar">
+          <div class="categories-container">
+            <h4>Categories</h4>
+            <ul class="category-list">
+              <li class="category-list-item">Laptops/PCs</li>
+              <li class="category-list-item">Mobiles</li>
+              <li class="category-list-item">Earphone/Headphones</li>
+              <li class="category-list-item">Cameras</li>
+              <li class="category-list-item">Games</li>
+            </ul>
+          </div>
+
+          <div class="filter-container m-2">
+            <div class="filter-heading mb-2">
+              <h4>Filters</h4>
+              <button class="btn btn-danger">Clear filter</button>
+            </div>
+
+            <span class="sidebar-heading">Price</span>
+            <ul class="category-list">
+              <li class="category-list-item">Under ₹1,000</li>
+              <li class="category-list-item">₹1,000-₹5,000</li>
+              <li class="category-list-item">₹5,000-₹10,000</li>
+              <li class="category-list-item">Over ₹10,000</li>
+            </ul>
+
+            <span class="sidebar-heading">Sort By</span>
+            <ul class="category-list">
+              <li class="category-list-item">
+                <input type="radio" id="hp-option" name="price-sort" />
+                <label for="hp-option"> Price - High to low </label>
+              </li>
+              <li class="category-list-item">
+                <input type="radio" id="lp-option" name="price-sort" />
+                <label for="lp-option"> Price - Low to high </label>
+              </li>
+            </ul>
+            <span class="sidebar-heading">Rating</span>
+            <ul class="category-list">
+              <li class="category-list-item">
+                <input type="radio" id="fo-option" name="star-selector" />
+                <label for="fo-option"> 4 Star & above </label>
+              </li>
+              <li class="category-list-item">
+                <input type="radio" id="th-option" name="star-selector" />
+                <label for="th-option"> 3 Star & above </label>
+              </li>
+              <li class="category-list-item">
+                <input type="radio" id="tw-option" name="star-selector" />
+                <label for="tw-option"> 2 Star & above </label>
+              </li>
+              <li class="category-list-item">
+                <input type="radio" id="on-option" name="star-selector" />
+                <label for="on-option"> 1 Star & above </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <main class="product-container">
+        <h4 class="result-heading">
+          <span class="txt-grey">Showing results for :</span>
+          Earphones/Headphones
+        </h4>
+        <div class="card-container">
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge green">Trending</div>
+            <img src="../../assets/img/headphone.jpeg" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge red">Sale</div>
+            <img src="../../assets/img/headphone.jpeg" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge blue">Latest</div>
+            <img src="../../assets/img/laptop.png" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge green">Trending</div>
+            <img src="../../assets/img/headphone.jpeg" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge yellow">Best Seller</div>
+            <img src="../../assets/img/game.jpg" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge green">Trending</div>
+            <img src="../../assets/img/game.jpg" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge red">Sale</div>
+            <img src="../../assets/img/laptop.png" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge green">Trending</div>
+            <img src="../../assets/img/laptop.png" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-vertical popular-purchase hover-box-shadow">
+            <div class="card-badge badge red">Sale</div>
+            <img src="../../assets/img/headphone.jpeg" alt="card" />
+            <div class="card-body">
+              <h4 class="card-header">
+                ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
+              </h4>
+              <p class="card-price">
+                <span class="price">₹96,990 </span>
+                <strike>₹1,36,990</strike>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Add to Cart</button>
+              <button class="btn-card">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="btn-card">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer__item">
+            <h4>Account</h4>
+            <ul class="footer__list">
+              <li class="footer__list-item"><a href="#">My Account</a></li>
+              <li class="footer__list-item"><a href="#">Wishlist</a></li>
+              <li class="footer__list-item"><a href="#">Track Order</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h4>Help</h4>
+            <ul class="footer__list">
+              <li class="footer__list-item"><a href="#">FAQ</a></li>
+              <li class="footer__list-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h4>Contact Us</h4>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="https://www.linkedin.com/in/vishalkumar28/"
+                  >LinkedIn</a
+                >
+              </li>
+              <li class="footer__list-item">
+                <a href="https://github.com/vleads">Github</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="https://twitter.com/vishalk01234">Twitter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-rights">
+          &copy; 2022 Rapid Store. All Rights Reserved
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://rapidui.netlify.app/js/main.js"></script>
+  </body>
+</html>

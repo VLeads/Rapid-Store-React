@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --black: #212121;
+    --dark-blue: #172337;
+    --grey: grey;
+    --hover-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --red: #ee1010;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    color: var(--black);
+}
+
+.m-2{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.m-4{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+
+.mt-6{
+    margin-top: 6rem;
+}
+
+.mb-4{
+    margin-bottom: 4rem;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.sub-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 3.5rem;
+    font-size: 1.3rem;
+    border-bottom: 0.8px solid #e3e3e3c7;
+    color: var(--dark-grey);
+}
+
+.sub-nav  a{
+    color: var(--dark-grey);
+    padding: 0 0.6rem;
+    border-right: 1px solid var(--dark-grey)
+}
+
+.sub-nav  a:hover{
+    color: #474646
+}
+
+.sub-nav  a > i{
+    color: var(--dark-grey);
+}
+
+.sub-nav  a > i:hover{
+    color: #474646
+}
+
+.sub-nav  a:last-of-type{
+    border: none;
+}
+
+.sub-nav  span{
+    color: var(--dark-grey);
+}
+
+.navbar{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.footer-container{
+    display: flex;
+    gap: 35rem;
+    padding-top: 4rem; 
+    flex-wrap: wrap;
+}
+
+.footer__item{
+   
+}
+
+.footer__item > h4{
+    color: var(--grey);
+    margin-bottom: 6px;
+}
+
+.footer__list{
+    list-style: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer__list-item{
+    color: white;
+    padding: 4px;
+}
+
+.footer-rights{
+    margin: 0;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.card-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.hover-box-shadow:hover{
+    box-shadow: var(--hover-box-shadow);
+}
