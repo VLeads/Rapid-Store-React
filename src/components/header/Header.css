@@ -1,0 +1,32 @@
+.sub-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 3.5rem;
+    font-size: 1.3rem;
+    border-bottom: 0.8px solid #e3e3e3c7;
+    color: var(--dark-grey);
+}
+
+.sub-nav  a{
+    color: var(--dark-grey);
+    padding: 0 0.6rem;
+    border-right: 1px solid var(--dark-grey)
+}
+
+.sub-nav  a > i, .sub-nav  span {
+    color: var(--dark-grey);
+}
+
+.sub-nav  a:hover, .sub-nav  a > i:hover{
+    color: #474646
+}
+
+.sub-nav  a:last-of-type{
+    border: none;
+}
+
+.navbar{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}

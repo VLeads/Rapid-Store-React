@@ -1,0 +1,40 @@
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.footer-container{
+    display: flex;
+    gap: 35rem;
+    padding-top: 4rem; 
+    flex-wrap: wrap;
+}
+
+.footer__item > h4{
+    color: var(--grey);
+    margin-bottom: 6px;
+}
+
+.footer__list{
+    list-style: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer__list-item{
+    color: white;
+    padding: 4px;
+}
+
+.footer-rights{
+    margin: 0;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.4rem;
+}
