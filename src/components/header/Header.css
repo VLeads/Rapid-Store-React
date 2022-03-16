@@ -13,24 +13,16 @@
     border-right: 1px solid var(--dark-grey)
 }
 
-.sub-nav  a:hover{
-    color: #474646
-}
-
-.sub-nav  a > i{
+.sub-nav  a > i, .sub-nav  span {
     color: var(--dark-grey);
 }
 
-.sub-nav  a > i:hover{
+.sub-nav  a:hover, .sub-nav  a > i:hover{
     color: #474646
 }
 
 .sub-nav  a:last-of-type{
     border: none;
-}
-
-.sub-nav  span{
-    color: var(--dark-grey);
 }
 
 .navbar{

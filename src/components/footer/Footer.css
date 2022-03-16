@@ -16,10 +16,6 @@
     flex-wrap: wrap;
 }
 
-.footer__item{
-   
-}
-
 .footer__item > h4{
     color: var(--grey);
     margin-bottom: 6px;

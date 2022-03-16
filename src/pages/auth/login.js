@@ -27,8 +27,10 @@ const login = () => {
             </div>
 
             <div className="select-box">
-              <input type="checkbox" name="accept" />
-              <label for="accept">Remember me</label>
+              <label for="accept">
+                <input type="checkbox" name="accept" />
+                Remember me
+              </label>
               <a className="forgot-pass" href="">
                 Forgot your Password?
               </a>
