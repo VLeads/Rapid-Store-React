@@ -1,0 +1,65 @@
+import React from 'react'
+import "./Header.css"
+
+export function Header() {
+  return (
+    <div>
+        <div className="sub-nav">
+        <div className="left">
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Order Tracking</a>
+        </div>
+        <div className="right">
+          <span>Need help? Call Us: 000 000 0000</span>
+          <a href="#">Contact Us</a>
+          <a href="https://github.com/vleads">
+            <i className="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://twitter.com/vishalk01234">
+            <i className="fab fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/vishalkumar28/">
+            <i className="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:leader.vishalkumar@gmail.com">
+            <i className="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <nav className="navbar">
+        <a className="navbar-logo" href="#">
+          <img src="./assets/img/rapidstore.png" alt="rapid store" />
+        </a>
+        <div className="search-box">
+          <i className="fas fa-search"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+        <ul className="nav-links">
+          <li>
+            <a href="./components/Auth/login.html" className="btn btn-primary">
+              Login
+            </a>
+          </li>
+          <li>
+            <a href="./components/wishlist/wishlist.html">
+              <span className="badge-icon">
+                <span className="badge red">20+</span>
+                <i className="far fa-heart"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="./components/cart/cart.html">
+              <span className="badge-icon" >
+                <span className="badge blue">5</span>
+                <i className="far fa-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  )
+}

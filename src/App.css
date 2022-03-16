@@ -40,7 +40,7 @@
     text-transform: uppercase;
 }
 
-.sub-nav{
+/* .sub-nav{
     display: flex;
     justify-content: space-between;
     padding: 0.3rem 3.5rem;
@@ -79,9 +79,9 @@
     position: sticky;
     z-index: 1;
     top: 0;
-}
+} */
 
-.footer{
+/* .footer{
     width: 100%;
     height: auto;
     background-color: var(--dark-blue);
@@ -124,7 +124,7 @@
     margin-bottom: 1.5rem;
     color: white;
     font-size: 1.4rem;
-}
+} */
 
 .card-container{
     display: flex;
