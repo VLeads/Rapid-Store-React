@@ -10,8 +10,6 @@ export const ProductCard = ({ details }) => {
     _id,
   } = details;
 
-  console.log("test", ourPrice);
-
   return (
     <div className="card-vertical popular-purchase hover-box-shadow">
       <div className={`card-badge badge ${type}`}>{tagline}</div>
