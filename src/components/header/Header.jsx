@@ -1,10 +1,10 @@
-import React from 'react'
-import "./Header.css"
+import React from "react";
+import "./header.css";
 
 export function Header() {
   return (
     <div>
-        <div className="sub-nav">
+      <div className="sub-nav">
         <div className="left">
           <a href="#">About Us</a>
           <a href="#">Privacy Policy</a>
@@ -52,7 +52,7 @@ export function Header() {
           </li>
           <li>
             <a href="./components/cart/cart.html">
-              <span className="badge-icon" >
+              <span className="badge-icon">
                 <span className="badge blue">5</span>
                 <i className="far fa-shopping-cart"></i>
               </span>
@@ -61,5 +61,5 @@ export function Header() {
         </ul>
       </nav>
     </div>
-  )
+  );
 }

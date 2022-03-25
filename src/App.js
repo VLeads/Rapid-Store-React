@@ -1,14 +1,18 @@
 import "./App.css";
+import "./styles/styles.css";
 import logo from "./logo.png";
-import "./components/homepage/homepage.css";
+// import "./components/homepage/homepage.css";
 import { Header, Footer } from "./components";
-import poster from "./assets/img/Rapidstore-poster.png";
+
+import { Homepage } from "./pages";
 
 function App() {
   return (
     <div>
       <Header />
-      <main className="homepage-main">
+      <Homepage />
+      {/* ---- homepage ---- */}
+      {/* <main className="homepage-main">
         <div className="hero">
           <img src="./assets/img/rapidstore-poster.png" alt="" />
           <img src={poster} alt="poster" />
@@ -18,8 +22,7 @@ function App() {
           </a>
         </div>
 
-        {/* <!---------- why choose us ------> */}
-
+       
         <section className="feature-main">
           <h2>Why choose us</h2>
           <div className="feature-container">
@@ -42,7 +45,6 @@ function App() {
           </div>
         </section>
 
-        {/* <!-- ----- featured categories ------ --> */}
         <section className="category">
           <h2 className="justify-center m-2 mb-4">Featured categories</h2>
           <div className="card-container">
@@ -102,7 +104,7 @@ function App() {
           </div>
         </section>
 
-        {/* <!-- popular Purchase --> */}
+       
 
         <section>
           <h2 className="justify-center mt-6 mb-4">Polular Purchase</h2>
@@ -295,7 +297,7 @@ function App() {
             </div>
           </div>
         </section>
-      </main>
+      </main> */}
 
       {/* <!-- ---------- footer ---------- --> */}
 

@@ -71,25 +71,6 @@
     width: 20rem;
 }
 
-/*----- category -----*/
 
-.category .category-card{
-    height: 30rem
-}
-
-.category .category-card:hover{
-    box-shadow: var(--hover-box-shadow);
-}
-
-.card-container{
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.popular-purchase{
-    height: 31.5rem;
-}
 
 
