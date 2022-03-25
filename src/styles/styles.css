@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --black: #212121;
+    --dark-blue: #172337;
+    --grey: grey;
+    --hover-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --red: #ee1010;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    color: var(--black);
+}
+
+.m-2{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.m-4{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+
+.mt-6{
+    margin-top: 6rem;
+}
+
+.mb-4{
+    margin-bottom: 4rem;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.hover-box-shadow:hover{
+    box-shadow: var(--hover-box-shadow);
+}
+
+.category .category-card{
+    height: 30rem
+}
+
+.category .category-card:hover{
+    box-shadow: var(--hover-box-shadow);
+}
+
+.card-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.popular-purchase{
+    height: 31.5rem;
+}
