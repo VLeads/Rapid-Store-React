@@ -44,12 +44,12 @@ export function Header() {
             </a>
           </li>
           <li>
-            <a href="./components/wishlist/wishlist.html">
+            <Link to="/wishlist">
               <span className="badge-icon">
                 <span className="badge red">20+</span>
                 <i className="far fa-heart"></i>
               </span>
-            </a>
+            </Link>
           </li>
           <li>
             <a href="./components/cart/cart.html">
