@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./homepage.css";
 import heroPoster from "../../assets/img/Rapidstore-poster.png";
 import { PopularPurchaseSection } from "./PopularPurchaseSection";
@@ -11,9 +12,9 @@ const Homepage = () => {
       <div className="hero">
         <img src={heroPoster} alt="poster" loading="lazy" />
 
-        <a href="./components/productpage/productpage.html">
+        <Link to="/store">
           <button className="btn btn-primary">Shop Now</button>
-        </a>
+        </Link>
       </div>
 
       <ChooseUsSection />

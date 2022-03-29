@@ -1,29 +1,6 @@
-.page-layout{
-    display: grid;
-    grid-template-columns: 27rem 1fr 1fr;
-    grid-template-areas:
-    "sub-nav sub-nav sub-nav"
-    "navbar navbar navbar"
-    "sidebar product-main product-main"
-    "footer footer footer";
-}
-
-.sub-nav{
-    grid-area: sub-nav;
-}
-
-.navbar{
-    grid-area: navbar;
-}
-
-.footer{
-    grid-area: footer;
-}
-
 .sidebar-container{
-    grid-area:sidebar;
     position: relative;
-    margin-left: 2rem
+    margin-left: 2rem;
 }
 
 .sidebar{
@@ -40,26 +17,31 @@
     gap: 1rem;
 }
 
-
 .product-container{
-    grid-area: product-main;
     margin-top: 2rem;
     margin-left: 3rem;
 }
 
 .result-heading{
     margin: 1rem 1rem 3rem 0;
-   
 }
 
 .txt-grey{
     color: var(--grey);
 }
 
+.product-list{
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .card-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(26rem, max-content));
-    grid-gap: 1.6rem;
+    display: grid ;
+    flex: 1 1;
+    flex-wrap: wrap;
+    margin-right: auto;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, max-content));
+    gap: 1.6rem;
     padding: 0;
     justify-content: center;
 }
@@ -107,7 +89,6 @@
 
 .filter-heading > .btn{
     height: 3rem;
-    /* width: 4rem */
     align-items: center;
     line-height: 2px;
     font-weight: 400;
