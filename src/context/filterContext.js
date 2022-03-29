@@ -78,21 +78,6 @@ const FilterProvider = ({ children }) => {
   }
 
   function getFilteredData(productList, state) {
-    console.log(
-      "context",
-      state,
-      productList
-        .filter(({ ratings }) =>
-          state.sortByRating
-            ? parseInt(ratings, 10) >= parseInt(state.sortByRating, 10)
-            : productList
-        )
-        .filter(({ price }) =>
-          state.sortByRange !== 0
-            ? getNumberFromFormattedPrice(price.ourPrice) <= state.sortByRange
-            : productList
-        )
-    );
     return productList
       .filter(({ ratings }) =>
         state.sortByRating

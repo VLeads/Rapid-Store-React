@@ -6,6 +6,7 @@
     --grey: grey;
     --hover-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     --red: #ee1010;
+    --primary-bg-gradient: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
 }
 
 * {

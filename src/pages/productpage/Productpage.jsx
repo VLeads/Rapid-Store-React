@@ -20,7 +20,6 @@ export const Productpage = () => {
         </h4>
 
         <div className="card-container">
-          {/* {priceSortedData.map((details) => ( */}
           {filteredData.map((details) => (
             <ul className="product-list grid " key={details._id}>
               <li>

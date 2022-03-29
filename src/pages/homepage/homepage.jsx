@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./homepage.css";
+import "styles/styles.css";
 import heroPoster from "../../assets/img/Rapidstore-poster.png";
 import { PopularPurchaseSection } from "./PopularPurchaseSection";
 import { CategoriesSection } from "./CategoriesSection";
