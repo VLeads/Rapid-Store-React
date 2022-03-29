@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./styles/styles.css";
-
 import logo from "./logo.png";
-// import "./components/homepage/homepage.css";
+
 import { Header, Footer } from "./components";
 
 import { Homepage, Productpage } from "./pages";
@@ -16,7 +15,6 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/store" element={<Productpage />} />
       </Routes>
-      {/* <Homepage /> */}
       <Footer />
     </div>
   );
