@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 export function Header() {
   return (
-    <div>
+    <>
       <div className="sub-nav">
         <div className="left">
           <a href="#">About Us</a>
@@ -29,9 +30,9 @@ export function Header() {
       </div>
 
       <nav className="navbar">
-        <a className="navbar-logo" href="#">
+        <Link to="/" className="navbar-logo">
           <img src="./assets/img/rapidstore.png" alt="rapid store" />
-        </a>
+        </Link>
         <div className="search-box">
           <i className="fas fa-search"></i>
           <input type="text" placeholder="Search" />
@@ -60,6 +61,6 @@ export function Header() {
           </li>
         </ul>
       </nav>
-    </div>
+    </>
   );
 }

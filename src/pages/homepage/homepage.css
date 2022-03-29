@@ -21,10 +21,15 @@
     left: 5.2rem;
     width: 17rem;
     height: 5rem;
+    border: 1px solid  #bf2b50
 }
 
-.hero > button:hover{
-    border: 1px solid #7575f1
+.hero > a > button:hover{
+    background-image: var(--primary-bg-gradient);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    transition: all .1s ease-in-out;
+    background-position: 100% 0;
+    top: 62.5%;
 }
 
 .feature-main {
@@ -70,7 +75,4 @@
     font-size: 2rem;
     width: 20rem;
 }
-
-
-
 
