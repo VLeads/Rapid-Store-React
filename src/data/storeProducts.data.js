@@ -44,7 +44,7 @@ export const storeProducts = [
     },
     badge: { type: "", tagline: "" },
     ratings: 4.2,
-    categoryName: "games",
+    categoryName: "mobiles",
   },
 
   {
