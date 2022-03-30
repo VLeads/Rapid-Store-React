@@ -1,8 +1,25 @@
+import { useToast, useUser } from "context";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ACTION_TYPE_SUCCESS } from "utils";
 import "./header.css";
 
 export function Header() {
+  const navigate = useNavigate();
+
+  const authToken = localStorage.getItem("token");
+  const authTokenLength = authToken?.length;
+
+  const { toastDispatch } = useToast();
+
+  const logoutHandler = () => {
+    toastDispatch({
+      type: ACTION_TYPE_SUCCESS,
+      payload: `✅ Successfully logged out.Hope you had a great time 😄 `,
+    });
+    localStorage.removeItem("token");
+    navigate("/", { replace: true });
+  };
   return (
     <>
       <div className="sub-nav">
@@ -39,9 +56,15 @@ export function Header() {
         </div>
         <ul className="nav-links">
           <li>
-            <a href="./components/Auth/login.html" className="btn btn-primary">
-              Login
-            </a>
+            {authTokenLength ? (
+              <button className="btn btn-danger" onClick={logoutHandler}>
+                Logout
+              </button>
+            ) : (
+              <Link to="/login">
+                <button className="btn btn-primary">Login</button>
+              </Link>
+            )}
           </li>
           <li>
             <Link to="/wishlist">

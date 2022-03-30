@@ -1,5 +1,5 @@
 import { ProductCard } from "components";
-import { useFilter } from "context/filterContext";
+import { useFilter } from "context/filter-context";
 import { storeProducts } from "data/storeProducts.data";
 import React from "react";
 import "./productpage.css";

@@ -1,1 +1,0 @@
-export { getNumberFromFormattedPrice } from "./getNumbersFromFormattedPrice";

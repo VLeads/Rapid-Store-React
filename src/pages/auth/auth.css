@@ -13,8 +13,13 @@
     text-align: center;
     font-size: 1.6rem;
     margin-top: 1.5rem;
+    text-decoration: underline;
 }
 
 .auth-alternative:hover{
     color: var(--primary-color)
+}
+
+.auth-container > .signup-form{
+    height: auto;
 }
