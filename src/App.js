@@ -11,6 +11,7 @@ function App() {
   return (
     <div>
       <Header />
+
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/store" element={<Productpage />} />
