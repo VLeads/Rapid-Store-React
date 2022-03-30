@@ -1,3 +1,4 @@
+import { Toast } from "components";
 import { useToast, useUser } from "context";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,16 +11,21 @@ export function Header() {
   const authToken = localStorage.getItem("token");
   const authTokenLength = authToken?.length;
 
-  const { toastDispatch } = useToast();
+  const { toastDispatch, setShowToast } = useToast();
 
   const logoutHandler = () => {
+    setShowToast(true);
     toastDispatch({
       type: ACTION_TYPE_SUCCESS,
-      payload: `✅ Successfully logged out.Hope you had a great time 😄 `,
+      payload: `✅ Successfully logged out `,
     });
+    setTimeout(() => {
+      setShowToast(false);
+    }, 2500);
     localStorage.removeItem("token");
     navigate("/", { replace: true });
   };
+
   return (
     <>
       <div className="sub-nav">
@@ -84,6 +90,7 @@ export function Header() {
           </li>
         </ul>
       </nav>
+      <Toast />
     </>
   );
 }

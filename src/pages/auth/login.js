@@ -44,7 +44,6 @@ export const Login = () => {
       setTimeout(() => {
         setShowToast(false);
       }, 2500);
-      console.log("test");
     } else {
       try {
         const response = await postLoginDetailsApi(
