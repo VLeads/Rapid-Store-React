@@ -12,6 +12,13 @@ export const ProductCard = ({ details }) => {
     ratings,
   } = details;
 
+  function handleAddToWishlist() {
+    if (isInWishlist) {
+      removeWishlist(_id);
+    } else {
+    }
+  }
+
   return (
     <div className="card-vertical popular-purchase hover-box-shadow">
       {tagline && <div className={`card-badge badge ${type}`}>{tagline}</div>}
@@ -37,13 +44,10 @@ export const ProductCard = ({ details }) => {
         </div>
       </div>
       <div className="card-footer">
-        <button className="btn btn-primary">Add to Cart</button>
-        <button className="btn-card">
+        <button className="btn btn-primary btn-large">Add to Cart</button>
+        <button className="btn-card" onClick={handleAddToWishlist}>
           <i className="far fa-heart"></i>
         </button>
-        {/* <button className="btn-card">
-          <i className="fas fa-share-alt"></i>
-        </button> */}
       </div>
     </div>
   );

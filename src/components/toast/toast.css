@@ -1,0 +1,12 @@
+.toast-msg{
+    color: #f5f5f5
+}
+
+.success-toast{
+    background-color: #407ebd !important;
+}
+
+
+.error-toast{
+    background-color: #cc3f4b !important;
+}

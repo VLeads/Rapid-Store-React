@@ -49,6 +49,10 @@
     text-transform: uppercase;
 }
 
+.btn-large{
+    width: 18rem;
+}
+
 .hover-box-shadow:hover {
     box-shadow: var(--hover-box-shadow);
 }

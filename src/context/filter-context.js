@@ -1,6 +1,6 @@
-import { Children, createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { storeProducts } from "data/storeProducts.data";
-import { getNumberFromFormattedPrice } from "utils/functions";
+import { getNumberFromFormattedPrice } from "utils";
 
 const FilterContext = createContext(null);
 

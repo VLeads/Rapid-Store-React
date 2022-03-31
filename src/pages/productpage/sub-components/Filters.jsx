@@ -1,5 +1,5 @@
 import React from "react";
-import { useFilter } from "context/filterContext";
+import { useFilter } from "context";
 import { storeProducts } from "data/storeProducts.data";
 
 export const Filters = () => {

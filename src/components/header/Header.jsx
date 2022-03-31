@@ -1,8 +1,31 @@
+import { Toast } from "components";
+import { useToast, useUser } from "context";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ACTION_TYPE_SUCCESS } from "utils";
 import "./header.css";
 
 export function Header() {
+  const navigate = useNavigate();
+
+  const authToken = localStorage.getItem("token");
+  const authTokenLength = authToken?.length;
+
+  const { toastDispatch, setShowToast } = useToast();
+
+  const logoutHandler = () => {
+    setShowToast(true);
+    toastDispatch({
+      type: ACTION_TYPE_SUCCESS,
+      payload: `✅ Successfully logged out `,
+    });
+    setTimeout(() => {
+      setShowToast(false);
+    }, 2500);
+    localStorage.removeItem("token");
+    navigate("/", { replace: true });
+  };
+
   return (
     <>
       <div className="sub-nav">
@@ -39,17 +62,23 @@ export function Header() {
         </div>
         <ul className="nav-links">
           <li>
-            <a href="./components/Auth/login.html" className="btn btn-primary">
-              Login
-            </a>
+            {authTokenLength ? (
+              <button className="btn btn-danger" onClick={logoutHandler}>
+                Logout
+              </button>
+            ) : (
+              <Link to="/login">
+                <button className="btn btn-primary">Login</button>
+              </Link>
+            )}
           </li>
           <li>
-            <a href="./components/wishlist/wishlist.html">
+            <Link to="/wishlist">
               <span className="badge-icon">
                 <span className="badge red">20+</span>
                 <i className="far fa-heart"></i>
               </span>
-            </a>
+            </Link>
           </li>
           <li>
             <a href="./components/cart/cart.html">
@@ -61,6 +90,7 @@ export function Header() {
           </li>
         </ul>
       </nav>
+      <Toast />
     </>
   );
 }

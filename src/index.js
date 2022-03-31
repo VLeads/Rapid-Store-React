@@ -5,18 +5,22 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { FilterProvider } from "context/filterContext";
+import { FilterProvider, ToastProvider, UserProvider } from "context";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <FilterProvider>
-      <Router>
-        <App />
-      </Router>
-    </FilterProvider>
+    <UserProvider>
+      <ToastProvider>
+        <FilterProvider>
+          <Router>
+            <App />
+          </Router>
+        </FilterProvider>
+      </ToastProvider>
+    </UserProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
