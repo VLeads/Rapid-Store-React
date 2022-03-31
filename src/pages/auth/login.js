@@ -17,7 +17,7 @@ export const Login = () => {
   const { setIsLoggedin } = useUser();
 
   const [loginFormData, setLoginFormData] = useState({
-    emali: "",
+    email: "",
     password: "",
   });
 
@@ -62,7 +62,7 @@ export const Login = () => {
           setTimeout(() => {
             navigate("/", { replace: true });
             setShowToast(false);
-          }, 10000);
+          }, 1500);
           localStorage.setItem("token", response.data.encodedToken);
         }
       } catch (error) {
