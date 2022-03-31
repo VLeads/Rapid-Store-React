@@ -52,7 +52,6 @@ export const Login = () => {
           })
         );
         if (response.status === 200) {
-          console.log("login", response);
           setIsLoggedin(true);
           toastDispatch({
             type: ACTION_TYPE_SUCCESS,
