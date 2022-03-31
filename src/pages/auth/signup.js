@@ -66,8 +66,6 @@ export const Signup = () => {
 
         localStorage.setItem("token", response.data.encodedToken);
       } catch (error) {
-        console.log("signup error", error.response);
-
         const { status, statusText } = error.response;
         if (status === 422 && statusText === "Unprocessable Entity") {
           toastDispatch({

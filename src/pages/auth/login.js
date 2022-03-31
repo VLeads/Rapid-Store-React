@@ -66,8 +66,6 @@ export const Login = () => {
           localStorage.setItem("token", response.data.encodedToken);
         }
       } catch (error) {
-        console.log("login error", error.response);
-
         const { status, statusText } = error.response;
 
         if (status === 401 && statusText === "Unauthorized") {
