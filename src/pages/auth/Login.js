@@ -67,7 +67,7 @@ export const Login = () => {
           localStorage.setItem("token", response.data.encodedToken);
         }
       } catch (error) {
-        const { status, statusText } = error.response;
+        const { status, statusText } = error?.response;
 
         if (status === 401 && statusText === "Unauthorized") {
           toastDispatch({

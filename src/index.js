@@ -20,23 +20,21 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ToastProvider>
-      <UserProvider>
+    <Router>
+      <ToastProvider>
         <ProductsProvider>
           <FilterProvider>
             <CartProvider>
               <WishlistProvider>
-                <CategoryProvider>
-                  <Router>
-                    <App />
-                  </Router>
-                </CategoryProvider>
+                <UserProvider>
+                  <App />
+                </UserProvider>
               </WishlistProvider>
             </CartProvider>
           </FilterProvider>
         </ProductsProvider>
-      </UserProvider>
-    </ToastProvider>
+      </ToastProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

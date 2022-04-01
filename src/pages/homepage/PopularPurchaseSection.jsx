@@ -5,6 +5,7 @@ import { useProducts } from "context";
 const PopularPurchaseSection = () => {
   const { products } = useProducts();
   const { isLoading, data, error } = products;
+  console.log("data", data, error);
 
   return (
     <section>
