@@ -5,22 +5,38 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { FilterProvider, ToastProvider, UserProvider } from "context";
+import {
+  FilterProvider,
+  ToastProvider,
+  UserProvider,
+  CategoryProvider,
+  ProductsProvider,
+  WishlistProvider,
+  CartProvider,
+} from "context";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserProvider>
-      <ToastProvider>
-        <FilterProvider>
-          <Router>
-            <App />
-          </Router>
-        </FilterProvider>
-      </ToastProvider>
-    </UserProvider>
+    <ToastProvider>
+      <UserProvider>
+        <ProductsProvider>
+          <FilterProvider>
+            <CartProvider>
+              <WishlistProvider>
+                <CategoryProvider>
+                  <Router>
+                    <App />
+                  </Router>
+                </CategoryProvider>
+              </WishlistProvider>
+            </CartProvider>
+          </FilterProvider>
+        </ProductsProvider>
+      </UserProvider>
+    </ToastProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

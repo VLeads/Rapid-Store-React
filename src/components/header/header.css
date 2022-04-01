@@ -30,3 +30,7 @@
     z-index: 1;
     top: 0;
 }
+
+.badge-icon > .badge-count{
+    font-size: 1.4rem
+}

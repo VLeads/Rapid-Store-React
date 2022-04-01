@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useToast, useUser } from "context";
 import {
@@ -29,26 +29,28 @@ export const Login = () => {
     }));
   };
 
-  const submitLoginHandler = async (e) => {
+  const submitLoginHandler = (e) => {
     e.preventDefault();
-    if (
-      loginFormData.password.length < 6 ||
-      !testAlphaNumericString(loginFormData.password)
-    ) {
+    handleLogin(loginFormData.email, loginFormData.password);
+  };
+
+  const handleLogin = async (email, password) => {
+    if (password.length < 6 || !testAlphaNumericString(password)) {
       setShowToast(true);
       toastDispatch({
         type: ACTION_TYPE_ERROR,
         payload:
-          "⚠ Password length should be Alpha Numeric and have minimum 6 characters.",
+          "⚠ Password should be Alpha Numeric and have minimum 6 characters.",
       });
       setTimeout(() => {
         setShowToast(false);
-      }, 2500);
+      }, 3500);
     } else {
       try {
         const response = await postLoginDetailsApi(
           JSON.stringify({
-            ...loginFormData,
+            email: email,
+            password: password,
           })
         );
         if (response.status === 200) {
@@ -61,7 +63,7 @@ export const Login = () => {
           setTimeout(() => {
             navigate("/", { replace: true });
             setShowToast(false);
-          }, 1500);
+          }, 1800);
           localStorage.setItem("token", response.data.encodedToken);
         }
       } catch (error) {
@@ -138,7 +140,7 @@ export const Login = () => {
           </div>
 
           <div className="select-box">
-            <label for="accept">
+            <label htmlFor="accept">
               <input type="checkbox" name="accept" />
               Remember me
             </label>

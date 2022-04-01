@@ -1,34 +1,39 @@
 import React from "react";
+import { useWishlist } from "context";
+import { NoProduct, ProductCard } from "components";
+import { Link } from "react-router-dom";
 import "./wishlist.css";
 
 export const Wishlist = () => {
-  return (
-    <main class="wishlist-main">
-      <h2 class="justify-center mb-3">Wishlist</h2>
-      <div class="wishlist-card-container">
+  const { wishlist } = useWishlist();
+  const { data, error, isLoading } = wishlist;
 
-          {
-              
-          }
-        <div class="card-vertical wishlist-card hover-box-shadow">
-          <div class="card-badge badge green">Trending</div>
-          <img src="../../assets/img/headphone.jpeg" alt="card" />
-          <div class="card-body">
-            <h4 class="card-header">
-              ASUS ROG Strix G15 Ryzen 9 Octa Core 5900H...
-            </h4>
-            <p class="card-price">
-              <span class="price">₹96,990 </span>
-              <strike>₹1,36,990</strike>
-            </p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-primary">Add to Cart</button>
-            <button class="btn-card heart-select">
-              <i class="fa fa-heart"></i>
-            </button>
-          </div>
-        </div>
+  const authToken = localStorage.getItem("token");
+
+  return (
+    <main className="wishlist-main">
+      <h2 className="justify-center mb-3">
+        Wishlist ({authToken && (data.length !== 0 ? data.length : 0)})
+      </h2>
+      <div className="wishlist-card-container">
+        {authToken ? (
+          <>
+            {isLoading && <div>Loading your Wishlist's Item</div>}
+            {!isLoading && data.length > 0 ? (
+              data.map((details) => (
+                <ul className="product-list grid ">
+                  <li key={details._id}>
+                    <ProductCard details={details} cardType={"wishlist"} />
+                  </li>
+                </ul>
+              ))
+            ) : (
+              <NoProduct type="wishlist" />
+            )}
+          </>
+        ) : (
+          <NoProduct type="wishlist" />
+        )}
       </div>
     </main>
   );

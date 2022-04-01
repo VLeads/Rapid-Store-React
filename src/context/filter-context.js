@@ -1,11 +1,14 @@
 import { createContext, useContext, useReducer } from "react";
-import { storeProducts } from "data/storeProducts.data";
+
 import { getNumberFromFormattedPrice } from "utils";
+import { useProducts } from "./products-context";
 
 const FilterContext = createContext(null);
 
 const FilterProvider = ({ children }) => {
-  // const [{ sortByPrice, sortByRange, showCategory, sortByRating }, dispatch] =
+  const { products } = useProducts();
+  const { data } = products;
+
   const [state, dispatch] = useReducer(
     function filterReducer(state, action) {
       switch (action.type) {
@@ -91,7 +94,7 @@ const FilterProvider = ({ children }) => {
       );
   }
 
-  const priceSortedData = getPriceSortedData(storeProducts, state.sortByPrice);
+  const priceSortedData = getPriceSortedData(data, state.sortByPrice);
 
   const categoryIncludedData = getCategoryIncludedData(
     priceSortedData,

@@ -1,4 +1,6 @@
 import React from "react";
+import { useFilter } from "context";
+import { Link } from "react-router-dom";
 import "styles/styles.css";
 
 export const CategoryCard = ({ details }) => {
@@ -7,6 +9,14 @@ export const CategoryCard = ({ details }) => {
     img: { url, altText },
     name,
   } = details;
+
+  const { dispatch } = useFilter();
+
+  function categoryClickHandler() {
+    console.log("test", name, dispatch);
+    return;
+  }
+
   return (
     <div className="card-vertical category-card">
       <img src={url} alt={altText} loading="lazy" />
@@ -14,7 +24,25 @@ export const CategoryCard = ({ details }) => {
         <h4 className="justify-center m-2">{name}</h4>
       </div>
       <div className="card-footer justify-center">
-        <button className="btn btn-primary">View Deals</button>
+        <Link
+          to="/store"
+          className="btn btn-primary"
+          onClick={() =>
+            dispatch({
+              type: "SET_CATEGORY",
+              payload:
+                name === "Laptops/PCs"
+                  ? "LAPTOPS"
+                  : name === "Earphone/Headphone"
+                  ? "EARPHONES"
+                  : name === "Gaming"
+                  ? "GAMES"
+                  : name.toUpperCase(),
+            })
+          }
+        >
+          View Deals
+        </Link>
       </div>
     </div>
   );

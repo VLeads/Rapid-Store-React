@@ -1,6 +1,5 @@
 import React from "react";
 import { useFilter } from "context";
-import { storeProducts } from "data/storeProducts.data";
 
 export const Filters = () => {
   const {
@@ -12,10 +11,8 @@ export const Filters = () => {
     const checked = event.target.checked;
     const categoryType = event.target.value;
     if (checked) {
-      console.log("check", checked);
       return { type: "SET_CATEGORY", payload: categoryType.toUpperCase() };
     } else {
-      console.log("uncheck", checked, categoryType);
       return { type: "UNSET_CATEGORY", payload: categoryType.toUpperCase() };
     }
   }
@@ -119,7 +116,7 @@ export const Filters = () => {
           <span className="sidebar-heading">Sort By</span>
           <ul className="category-list">
             <li className="category-list-item">
-              <label for="hp-option">
+              <label htmlFor="hp-option">
                 {" "}
                 <input
                   type="radio"
@@ -134,7 +131,7 @@ export const Filters = () => {
               </label>
             </li>
             <li className="category-list-item">
-              <label for="lp-option">
+              <label htmlFor="lp-option">
                 <input
                   type="radio"
                   id="lp-option"
@@ -151,7 +148,7 @@ export const Filters = () => {
           <span className="sidebar-heading">Rating</span>
           <ul className="category-list">
             <li className="category-list-item">
-              <label for="fo-option">
+              <label htmlFor="fo-option">
                 {" "}
                 <input
                   type="radio"
@@ -164,7 +161,7 @@ export const Filters = () => {
               </label>
             </li>
             <li className="category-list-item">
-              <label for="th-option">
+              <label htmlFor="th-option">
                 <input
                   type="radio"
                   id="th-option"
@@ -176,7 +173,7 @@ export const Filters = () => {
               </label>
             </li>
             <li className="category-list-item">
-              <label for="tw-option">
+              <label htmlFor="tw-option">
                 <input
                   type="radio"
                   id="tw-option"
@@ -188,7 +185,7 @@ export const Filters = () => {
               </label>
             </li>
             <li className="category-list-item">
-              <label for="on-option">
+              <label htmlFor="on-option">
                 <input
                   type="radio"
                   id="on-option"
