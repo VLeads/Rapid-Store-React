@@ -22,17 +22,17 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <ToastProvider>
-        <ProductsProvider>
-          <FilterProvider>
-            <CartProvider>
+        <CartProvider>
+          <ProductsProvider>
+            <FilterProvider>
               <WishlistProvider>
                 <UserProvider>
                   <App />
                 </UserProvider>
               </WishlistProvider>
-            </CartProvider>
-          </FilterProvider>
-        </ProductsProvider>
+            </FilterProvider>
+          </ProductsProvider>
+        </CartProvider>
       </ToastProvider>
     </Router>
   </React.StrictMode>,

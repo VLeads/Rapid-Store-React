@@ -13,7 +13,7 @@ export const Wishlist = () => {
   return (
     <main className="wishlist-main">
       <h2 className="justify-center mb-3">
-        Wishlist ({authToken && (data.length !== 0 ? data.length : 0)})
+        Wishlist ({authToken && data.length !== 0 ? data.length : 0})
       </h2>
       <div className="wishlist-card-container">
         {authToken ? (
