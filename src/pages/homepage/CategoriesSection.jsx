@@ -5,6 +5,7 @@ import { CategoryCard } from "components";
 import "styles/styles.css";
 import { useCategory } from "context";
 import { getAllCategories } from "utils";
+import axios from "axios";
 
 export const CategoriesSection = () => {
   const [data, setData] = useState([]);

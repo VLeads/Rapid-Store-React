@@ -1,9 +1,10 @@
 import axios from "axios";
 const token = localStorage.getItem("token");
+
 function getConfig() {
   const config = {
     headers: {
-      authorization: token.length ? token : "",
+      authorization: token ? token : "",
       "content-type": "application/json",
     },
   };
