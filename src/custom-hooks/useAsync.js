@@ -79,7 +79,6 @@ export const useAsync = (api, fetchData, token) => {
         type: ACTION_TYPE_ERROR,
         payload: error.response,
       });
-      console.log("Er", error.message);
 
       toastDispatch({
         type: ACTION_TYPE_ERROR,

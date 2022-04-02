@@ -2,8 +2,6 @@ import React from "react";
 import { getNumbersInLocaleFormat } from "utils";
 
 export const CartPriceCard = ({ details }) => {
-  console.log("price-card", details);
-
   const { totalPrice, discountPrice, items } = details;
 
   return (

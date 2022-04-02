@@ -20,13 +20,13 @@ export const Wishlist = () => {
           <>
             {isLoading && <div>Loading your Wishlist's Item</div>}
             {!isLoading && data.length > 0 ? (
-              data.map((details) => (
-                <ul className="product-list grid ">
+              <ul className="product-list grid ">
+                {data.map((details) => (
                   <li key={details._id}>
                     <ProductCard details={details} cardType={"wishlist"} />
                   </li>
-                </ul>
-              ))
+                ))}
+              </ul>
             ) : (
               <NoProduct type="wishlist" />
             )}

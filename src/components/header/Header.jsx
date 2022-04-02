@@ -9,7 +9,6 @@ export function Header() {
   const navigate = useNavigate();
 
   const authToken = localStorage.getItem("token");
-  const authTokenLength = authToken?.length;
 
   const { toastDispatch, setShowToast } = useToast();
 
@@ -65,7 +64,7 @@ export function Header() {
         </div>
         <ul className="nav-links">
           <li>
-            {authTokenLength ? (
+            {authToken ? (
               <button className="btn btn-danger" onClick={logoutHandler}>
                 Logout
               </button>

@@ -10,9 +10,7 @@ export const Cart = () => {
 
   const { cart } = useCart();
 
-  const { data, isLoading, error } = cart;
-
-  console.log("cart", data);
+  const { data, isLoading, error } = cart;  
 
   return (
     <div className="cart-container">

@@ -12,11 +12,6 @@ export const CategoryCard = ({ details }) => {
 
   const { dispatch } = useFilter();
 
-  function categoryClickHandler() {
-    console.log("test", name, dispatch);
-    return;
-  }
-
   return (
     <div className="card-vertical category-card">
       <img src={url} alt={altText} loading="lazy" />

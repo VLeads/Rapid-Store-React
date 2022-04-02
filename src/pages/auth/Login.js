@@ -14,7 +14,7 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const { toastState, toastDispatch, showToast, setShowToast } = useToast();
-  const { setIsLoggedin } = useUser();
+  const { setIsLoggedin, getToken, setGetToken } = useUser();
 
   const [loginFormData, setLoginFormData] = useState({
     email: "",
@@ -65,6 +65,8 @@ export const Login = () => {
             setShowToast(false);
           }, 1800);
           localStorage.setItem("token", response.data.encodedToken);
+
+          setGetToken(response.data.encodedToken);
         }
       } catch (error) {
         const { status, statusText } = error?.response;

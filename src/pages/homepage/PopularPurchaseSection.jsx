@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ProductCard } from "components/index";
 import { useProducts } from "context";
 
 const PopularPurchaseSection = () => {
   const { products } = useProducts();
   const { isLoading, data, error } = products;
-  console.log("data", data, error);
 
   return (
     <section>

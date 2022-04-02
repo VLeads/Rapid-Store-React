@@ -16,7 +16,7 @@ export const Signup = () => {
   const navigate = useNavigate();
 
   const { toastState, toastDispatch, showToast, setShowToast } = useToast();
-  const { setIsLoggedin } = useUser();
+  const { setIsLoggedin, getToken, setGetToken } = useUser();
 
   const [signupFormData, setSignupFormData] = useState({
     firstName: "",
@@ -45,7 +45,7 @@ export const Signup = () => {
           "Password length should be Alpha Numeric and have minimum 6 characters.",
       });
       setShowToast(true);
-      setTimeout(() => {  
+      setTimeout(() => {
         setShowToast(false);
       }, 2500);
     } else {
@@ -69,6 +69,9 @@ export const Signup = () => {
         }
 
         localStorage.setItem("token", response.data.encodedToken);
+
+        setGetToken(response.data.encodedToken);
+        
       } catch (error) {
         const { status, statusText } = error.response;
         if (status === 422 && statusText === "Unprocessable Entity") {

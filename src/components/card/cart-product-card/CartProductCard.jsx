@@ -33,8 +33,6 @@ export const CartProductCard = ({ details }) => {
     isLoading: wishlistLoading,
   } = wishlist;
 
-  console.log("cart", wishlistData, wishlistError, wishlistLoading);
-
   const { cart, postCartQty, deleteDataUsingApi: deleteCartItem } = useCart();
 
   const { data: cartData, error: cartError, isLoading: cartLoading } = cart;

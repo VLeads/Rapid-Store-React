@@ -1,16 +1,19 @@
+import React, { useState, useEffect } from "react";
 import { useCart, useWishlist } from "context";
 import { Toast } from "components";
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "styles/styles.css";
 import { deleteWishlistItemApi, postCartItemApi, postWishlistApi } from "utils";
 import "./productCard.css";
 
 export const ProductCard = ({ details, cardType }) => {
-  // console.log("pp", details, cardType);
   const navigate = useNavigate();
 
-  const authToken = localStorage.getItem("token");
+  // const authToken = localStorage.getItem("token");
+  const [authToken, setAuthToken] = useState("");
+  useEffect(() => {
+    setAuthToken(localStorage.getItem("token"));
+  }, []);
 
   const {
     wishlist,
@@ -32,7 +35,6 @@ export const ProductCard = ({ details, cardType }) => {
 
   const { data: cartData, error: cartError, isLoading: cartLoading } = cart;
 
-  console.log("cart", cartData);
   const {
     img: { altText, url },
     heading,
