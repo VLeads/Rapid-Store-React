@@ -9,7 +9,6 @@ import "./productCard.css";
 export const ProductCard = ({ details, cardType }) => {
   const navigate = useNavigate();
 
-  // const authToken = localStorage.getItem("token");
   const [authToken, setAuthToken] = useState("");
   useEffect(() => {
     setAuthToken(localStorage.getItem("token"));
