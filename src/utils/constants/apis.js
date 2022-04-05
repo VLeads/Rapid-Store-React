@@ -1,11 +1,13 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token");
+function tokenVal() {
+  return localStorage.getItem("token");
+}
 
 function getConfig() {
   const config = {
     headers: {
-      authorization: token ? token : "",
+      authorization: tokenVal() ? tokenVal() : "",
       "content-type": "application/json",
     },
   };
@@ -62,6 +64,7 @@ export function deleteCartItemApi(id) {
 
 export function postCartItemApi(data) {
   const URL = httpConfig + "/user/cart";
+  console.log("tokenVal", tokenVal());
   return axios.post(URL, data, getConfig());
 }
 
