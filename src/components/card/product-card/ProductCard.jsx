@@ -55,6 +55,7 @@ export const ProductCard = ({ details, cardType }) => {
   }
 
   function handleAddToCart() {
+    console.log("token", authToken);
     postCartItem(postCartItemApi, { product: { ...details } });
   }
 
