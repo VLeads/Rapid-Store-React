@@ -1,12 +1,15 @@
 import { ProductCard } from "components";
+import { useProducts } from "context";
 import { useFilter } from "context/filter-context";
-import { storeProducts } from "data/storeProducts.data";
 import React from "react";
 import "./productpage.css";
 import { Filters } from "./sub-components/Filters";
 
 export const Productpage = () => {
-  const { filteredData, priceSortedData } = useFilter();
+  const { products } = useProducts();
+  const { isLoading } = products;
+
+  const { filteredData } = useFilter();
 
   return (
     <div className="flex">
@@ -20,13 +23,15 @@ export const Productpage = () => {
         </h4>
 
         <div className="card-container">
-          {filteredData.map((details) => (
-            <ul className="product-list grid " key={details._id}>
-              <li>
-                <ProductCard details={details} />
-              </li>
-            </ul>
-          ))}
+          {isLoading && <div>Loading All Products</div>}
+          {!isLoading &&
+            filteredData.map((details) => (
+              <ul className="product-list grid " key={details._id}>
+                <li>
+                  <ProductCard details={details} />
+                </li>
+              </ul>
+            ))}
         </div>
       </main>
     </div>

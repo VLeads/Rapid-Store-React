@@ -16,7 +16,7 @@ export const Signup = () => {
   const navigate = useNavigate();
 
   const { toastState, toastDispatch, showToast, setShowToast } = useToast();
-  const { setIsLoggedin } = useUser();
+  const { setIsLoggedin, getToken, setGetToken } = useUser();
 
   const [signupFormData, setSignupFormData] = useState({
     firstName: "",
@@ -44,6 +44,10 @@ export const Signup = () => {
         payload:
           "Password length should be Alpha Numeric and have minimum 6 characters.",
       });
+      setShowToast(true);
+      setTimeout(() => {
+        setShowToast(false);
+      }, 2500);
     } else {
       try {
         const response = await postSignUpDetailsApi(
@@ -55,16 +59,19 @@ export const Signup = () => {
           setIsLoggedin(true);
           toastDispatch({
             type: ACTION_TYPE_SUCCESS,
-            payload: `✅ Now you're signed In ${response.data.createdUser.firstName}. Grab the best deals 🎉 `,
+            payload: `✅ Now you're Signed In ${response.data.createdUser.firstName}. Grab the best deals 🎉 `,
           });
           setShowToast(true);
           setTimeout(() => {
             navigate("/", { replace: true });
             setShowToast(false);
-          }, 2500);
+          }, 2000);
         }
 
         localStorage.setItem("token", response.data.encodedToken);
+
+        setGetToken(response.data.encodedToken);
+        
       } catch (error) {
         const { status, statusText } = error.response;
         if (status === 422 && statusText === "Unprocessable Entity") {

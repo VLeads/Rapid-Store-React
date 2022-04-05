@@ -8,7 +8,8 @@ import Mockman from "mockman-js";
 
 import { Header, Footer } from "./components";
 
-import { Homepage, Login, Productpage, Signup, Wishlist } from "./pages";
+import { Cart, Homepage, Login, Productpage, Signup, Wishlist } from "./pages";
+import { CategoryProvider } from "context";
 
 function App() {
   return (
@@ -16,9 +17,17 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/"
+          element={
+            <CategoryProvider>
+              <Homepage />
+            </CategoryProvider>
+          }
+        />
         <Route path="/store" element={<Productpage />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/mockman" element={<Mockman />} />

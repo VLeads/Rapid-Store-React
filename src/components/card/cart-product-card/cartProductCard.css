@@ -1,0 +1,72 @@
+.card-footer{
+    margin-top:auto;
+}
+
+.cancel-btn > i{
+    color: #df1818;
+    cursor: pointer;
+}
+
+
+
+.card-horizontal{
+    height: 22rem;
+    width: 55rem;
+}
+
+.card-horizontal > .card-header{
+    font-size: 1.5rem
+}
+
+.circular-btn{
+    cursor:pointer;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--grey);
+    border-radius: 50%;
+    text-align:center;
+    font-size: 16px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 4px
+}
+
+
+.cart-card-price-star{
+    display: flex;
+    justify-content: space-between;
+}
+
+.move-to-wishlist-btn{
+    margin-left: 1.6rem;
+    font-weight: inherit !important
+}
+
+.qty{
+    display: flex;
+    margin-left:auto;
+    font-size:1.5rem
+}
+
+.qty-input{
+    width: 40px;
+    text-align: center;
+    padding: 0.5px 1px;
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 4px
+}
+
+input:focus{
+    outline: none;
+    box-shadow: none;
+
+}
+
+/* input box arrows remove */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,5 +1,5 @@
 import { Toast } from "components";
-import { useToast, useUser } from "context";
+import { useCart, useToast, useUser, useWishlist } from "context";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ACTION_TYPE_SUCCESS } from "utils";
@@ -9,9 +9,11 @@ export function Header() {
   const navigate = useNavigate();
 
   const authToken = localStorage.getItem("token");
-  const authTokenLength = authToken?.length;
 
   const { toastDispatch, setShowToast } = useToast();
+
+  const { wishlist } = useWishlist();
+  const { cart } = useCart();
 
   const logoutHandler = () => {
     setShowToast(true);
@@ -62,7 +64,7 @@ export function Header() {
         </div>
         <ul className="nav-links">
           <li>
-            {authTokenLength ? (
+            {authToken ? (
               <button className="btn btn-danger" onClick={logoutHandler}>
                 Logout
               </button>
@@ -75,18 +77,31 @@ export function Header() {
           <li>
             <Link to="/wishlist">
               <span className="badge-icon">
-                <span className="badge red">20+</span>
+                {/* <span className="badge red">20+</span> */}
+                <span className="badge badge-count red">
+                  {authToken
+                    ? wishlist.data.length > 20
+                      ? "20+"
+                      : wishlist.data.length
+                    : "0"}
+                </span>
                 <i className="far fa-heart"></i>
               </span>
             </Link>
           </li>
           <li>
-            <a href="./components/cart/cart.html">
+            <Link to="/cart">
               <span className="badge-icon">
-                <span className="badge blue">5</span>
+                <span className="badge badge-count blue">
+                  {authToken
+                    ? cart.data.length > 20
+                      ? "20+"
+                      : cart.data.length
+                    : "0"}
+                </span>
                 <i className="far fa-shopping-cart"></i>
               </span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
