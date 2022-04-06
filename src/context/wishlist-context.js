@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { getAllWishlistItem } from "utils";
 import { useAsync } from "custom-hooks/useAsync";
+import { useUser } from "./user-context";
 
 const WishlistContext = createContext(null);
 
