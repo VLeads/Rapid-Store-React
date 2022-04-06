@@ -1,14 +1,14 @@
-.auth-container{
+.auth-container {
     margin: 4rem 1rem;
     display: flex;
     justify-content: center;
 }
 
-.signup-form{
+.signup-form {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.auth-alternative{
+.auth-alternative {
     text-decoration: none;
     text-align: center;
     font-size: 1.6rem;
@@ -16,10 +16,41 @@
     text-decoration: underline;
 }
 
-.auth-alternative:hover{
+.auth-alternative:hover {
     color: var(--primary-color)
 }
 
-.auth-container > .signup-form{
+.auth-container>.signup-form {
     height: auto;
+}
+
+
+.password-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.password-input input {
+    width: 90%;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.password-eye-btn {
+    width: 10%;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--grey);
+    border-left: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    padding-top: 0.5rem;
+}
+
+.password-eye-btn i {
+    font-size: 1.5rem;
+    vertical-align: middle;
 }

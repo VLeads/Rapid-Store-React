@@ -64,7 +64,6 @@ export function deleteCartItemApi(id) {
 
 export function postCartItemApi(data) {
   const URL = httpConfig + "/user/cart";
-  console.log("tokenVal", tokenVal());
   return axios.post(URL, data, getConfig());
 }
 

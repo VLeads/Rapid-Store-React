@@ -6,9 +6,17 @@ import logo from "./logo.png";
 // mockman-js
 import Mockman from "mockman-js";
 
-import { Header, Footer } from "./components";
+import { Header, Footer, RequiresAuth, RestrictAuth } from "./components";
 
-import { Cart, Homepage, Login, Productpage, Signup, Wishlist } from "./pages";
+import {
+  Cart,
+  Error404,
+  Homepage,
+  Login,
+  Productpage,
+  Signup,
+  Wishlist,
+} from "./pages";
 import { CategoryProvider } from "context";
 
 function App() {
@@ -26,11 +34,16 @@ function App() {
           }
         />
         <Route path="/store" element={<Productpage />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route element={<RequiresAuth />}>
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
+        </Route>
+        <Route element={<RestrictAuth />}>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
         <Route path="/mockman" element={<Mockman />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
     </div>

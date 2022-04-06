@@ -2,15 +2,14 @@ import React from "react";
 import "./cart.css";
 
 import { CartPriceCard, NoProduct, CartProductCard } from "components";
-import { useCart } from "context";
+import { useCart, useUser } from "context";
 import { getPriceCardDetails } from "utils";
 
 export const Cart = () => {
-  const authToken = localStorage.getItem("token");
-
+  const { getToken: authToken } = useUser();
   const { cart } = useCart();
 
-  const { data, isLoading, error } = cart;  
+  const { data, isLoading, error } = cart;
 
   return (
     <div className="cart-container">
@@ -22,8 +21,13 @@ export const Cart = () => {
         <div className="cart-product-main">
           {authToken ? (
             <>
-              {isLoading && <div>Loading your Cart's Item</div>}
-              {!isLoading && data.length > 0 ? (
+              {isLoading && (
+                <div className="loading_heading">
+                  Loading your Cart's Item...
+                </div>
+              )}
+
+              {data.length > 0 ? (
                 data.map((details) => (
                   <div key={details._id}>
                     <CartProductCard details={details} />
@@ -38,9 +42,8 @@ export const Cart = () => {
           )}
         </div>
       </section>
-      {!isLoading && data.length > 0 && (
-        <CartPriceCard details={getPriceCardDetails(data)} />
-      )}
+
+      {data.length > 0 && <CartPriceCard details={getPriceCardDetails(data)} />}
     </div>
   );
 };

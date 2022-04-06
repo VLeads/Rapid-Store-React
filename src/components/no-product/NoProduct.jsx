@@ -7,7 +7,7 @@ export const NoProduct = ({ type }) => {
     <div className="no-product-main">
       {" "}
       <div className="no-product-heading">
-        No products in your {type},{" "}
+        No product in your {type},{" "}
         <Link to="/store" className="route-to-store">
           Add Now
         </Link>

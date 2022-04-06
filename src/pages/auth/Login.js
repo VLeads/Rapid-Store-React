@@ -15,11 +15,12 @@ export const Login = () => {
 
   const { toastState, toastDispatch, showToast, setShowToast } = useToast();
   const { setIsLoggedin, getToken, setGetToken } = useUser();
-
+  const [inputType, setInputType] = useState("password");
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
   });
+  const testLogin = { email: "vishal@mail.com", password: "Rapidstore1" };
 
   const inputChange = (e) => {
     const value = e.target.value;
@@ -103,6 +104,12 @@ export const Login = () => {
     }
   };
 
+  const togglePassword = () => {
+    setInputType((inputType) =>
+      inputType === "password" ? "text" : "password"
+    );
+  };
+
   return (
     <main className="auth-container">
       <Toast />
@@ -127,18 +134,34 @@ export const Login = () => {
             />
           </div>
 
-          <div className="input-group">
+          <div className="input-group ">
             <label> Password </label>
-            <input
-              className="input-box"
-              type="password"
-              placeholder="******"
-              name="password"
-              maxLength="28"
-              onChange={inputChange}
-              value={loginFormData.password}
-              required
-            />
+            <div className="password-input">
+              <input
+                className="input-box"
+                type={inputType}
+                placeholder="******"
+                name="password"
+                maxLength="28"
+                onChange={inputChange}
+                value={loginFormData.password}
+                required
+              />
+              <div
+                type=""
+                className="password-eye-btn"
+                onClick={() => {
+                  togglePassword();
+                }}
+              >
+                <i
+                  className={`fa fa-eye${
+                    inputType === "password" ? "-slash" : ""
+                  }`}
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
           </div>
 
           <div className="select-box">
@@ -153,6 +176,15 @@ export const Login = () => {
 
           <button className="btn btn-primary" type="submit">
             Login
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={(e) => {
+              e.preventDefault();
+              setLoginFormData(testLogin);
+            }}
+          >
+            Login as Guest
           </button>
           <Link to="/signup" className="auth-alternative">
             New on Rapid Store? Sign Up

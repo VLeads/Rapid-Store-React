@@ -17,7 +17,7 @@ export const Signup = () => {
 
   const { toastState, toastDispatch, showToast, setShowToast } = useToast();
   const { setIsLoggedin, getToken, setGetToken } = useUser();
-
+  const [inputType, setInputType] = useState("password");
   const [signupFormData, setSignupFormData] = useState({
     firstName: "",
     lastName: "",
@@ -71,7 +71,6 @@ export const Signup = () => {
         localStorage.setItem("token", response.data.encodedToken);
 
         setGetToken(response.data.encodedToken);
-        
       } catch (error) {
         const { status, statusText } = error.response;
         if (status === 422 && statusText === "Unprocessable Entity") {
@@ -95,6 +94,12 @@ export const Signup = () => {
         }
       }
     }
+  };
+
+  const togglePassword = () => {
+    setInputType((inputType) =>
+      inputType === "password" ? "text" : "password"
+    );
   };
 
   return (
@@ -149,16 +154,26 @@ export const Signup = () => {
 
           <div className="input-group">
             <label> Password </label>
-            <input
-              className="input-box"
-              maxLength="28"
-              type="password"
-              name="password"
-              placeholder="******"
-              onChange={inputChange}
-              value={signupFormData.password}
-              required
-            />
+            <div className="password-input">
+              <input
+                className="input-box"
+                maxLength="28"
+                type={inputType}
+                name="password"
+                placeholder="******"
+                onChange={inputChange}
+                value={signupFormData.password}
+                required
+              />
+              <div className="password-eye-btn" onClick={togglePassword}>
+                <i
+                  className={`fa fa-eye${
+                    inputType === "password" ? "-slash" : ""
+                  }`}
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
           </div>
 
           <div className="select-box">

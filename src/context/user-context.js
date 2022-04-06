@@ -1,12 +1,15 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, useEffect, createContext, useState } from "react";
 
 const UserContext = createContext(null);
 
 const UserProvider = ({ children }) => {
-  const token = localStorage.getItem("token");
-  const [isLoggedIn, setIsLoggedin] = useState(token ? true : false);
-
   const [getToken, setGetToken] = useState("");
+
+  useEffect(() => {
+    setGetToken(localStorage.getItem("token"));
+  }, []);
+
+  const [isLoggedIn, setIsLoggedin] = useState(getToken ? true : false);
 
   return (
     <UserContext.Provider
