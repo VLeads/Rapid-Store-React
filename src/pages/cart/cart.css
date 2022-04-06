@@ -1,16 +1,15 @@
-
-
-.cart-container{
+.cart-container {
     display: flex;
     justify-content: space-evenly;
 }
 
-.cart-product-container{
-   
-  
+.loading_heading {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-.cart-product-main{
+.cart-product-main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(47rem, max-content));
     grid-gap: 1.5rem;
@@ -20,11 +19,11 @@
 
 
 
-.price-detail-container{
+.price-detail-container {
     position: relative;
 }
 
-.price-details{
+.price-details {
     position: sticky;
     margin-top: 4rem;
     margin-bottom: 3rem;
@@ -36,43 +35,41 @@
     height: 35rem
 }
 
-.price-details > h4 {
+.price-details>h4 {
     border-bottom: 1px solid var(--grey);
 }
 
-.price-details > .price:nth-last-child(3){
+.price-details>.price:nth-last-child(3) {
     border-bottom: 1px solid var(--grey);
 }
 
-.price-total:nth-last-child(1){
+.price-total:nth-last-child(1) {
     border-bottom: 1px solid var(--grey);
 }
 
-.price-details > *{
+.price-details>* {
     padding-bottom: 1.5rem;
 }
 
-.price-details > .price{
+.price-details>.price {
     display: flex;
     justify-content: space-between;
 }
 
-.price-heading{
+.price-heading {
     font-size: 1.6rem;
 }
 
-.amount{
+.amount {
     font-size: 1.5rem
 }
 
-.price-total{
+.price-total {
     margin-top: 1.5rem;
     border-bottom: 1px solid var(--grey);
 }
 
-.order{
+.order {
     width: 100%;
     padding: 1.5rem;
 }
-
-

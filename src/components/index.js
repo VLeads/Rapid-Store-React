@@ -6,3 +6,5 @@ export { Toast } from "./toast/Toast";
 export { NoProduct } from "./no-product/NoProduct";
 export { CartProductCard } from "./card/cart-product-card/CartProductCard";
 export { CartPriceCard } from "./card/cart-price-card/CartPriceCard";
+export { RequiresAuth } from "./authentication/RequiresAuth";
+export { RestrictAuth } from "./authentication/RestrictAuth";

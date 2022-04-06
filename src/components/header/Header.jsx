@@ -8,7 +8,7 @@ import "./header.css";
 export function Header() {
   const navigate = useNavigate();
 
-  const authToken = localStorage.getItem("token");
+  const { getToken: authToken, setGetToken } = useUser();
 
   const { toastDispatch, setShowToast } = useToast();
 
@@ -25,6 +25,7 @@ export function Header() {
       setShowToast(false);
     }, 2500);
     localStorage.removeItem("token");
+    setGetToken("");
     navigate("/", { replace: true });
   };
 

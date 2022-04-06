@@ -7,7 +7,7 @@ const WishlistContext = createContext(null);
 const WishlistProvider = ({ children }) => {
   const fetchData = "wishlist";
 
-  const authToken = localStorage.getItem("token");
+  const { getToken: authToken } = useUser();
 
   //   I can mention name too, but utilizing the JS property
   const { state: wishlist, ...methods } = useAsync(
