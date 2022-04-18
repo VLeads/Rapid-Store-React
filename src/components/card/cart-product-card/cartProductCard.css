@@ -1,30 +1,29 @@
-.card-footer{
-    margin-top:auto;
+.card-footer {
+    margin-top: auto;
 }
 
-.cancel-btn > i{
+.cancel-btn>i {
     color: #df1818;
     cursor: pointer;
 }
 
-
-
-.card-horizontal{
+.card-horizontal {
     height: 22rem;
     width: 55rem;
+    box-shadow: 0 0 15px var(--card-shadow-dark);
 }
 
-.card-horizontal > .card-header{
+.card-horizontal>.card-header {
     font-size: 1.5rem
 }
 
-.circular-btn{
-    cursor:pointer;
+.circular-btn {
+    cursor: pointer;
     width: 28px;
     height: 28px;
     border: 1px solid var(--grey);
     border-radius: 50%;
-    text-align:center;
+    text-align: center;
     font-size: 16px;
     margin-left: 2px;
     margin-right: 2px;
@@ -32,23 +31,23 @@
 }
 
 
-.cart-card-price-star{
+.cart-card-price-star {
     display: flex;
     justify-content: space-between;
 }
 
-.move-to-wishlist-btn{
+.move-to-wishlist-btn {
     margin-left: 1.6rem;
     font-weight: inherit !important
 }
 
-.qty{
+.qty {
     display: flex;
-    margin-left:auto;
-    font-size:1.5rem
+    margin-left: auto;
+    font-size: 1.5rem
 }
 
-.qty-input{
+.qty-input {
     width: 40px;
     text-align: center;
     padding: 0.5px 1px;
@@ -57,7 +56,7 @@
     padding: 4px
 }
 
-input:focus{
+input:focus {
     outline: none;
     box-shadow: none;
 
@@ -67,6 +66,54 @@ input:focus{
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+@media only screen and (max-width: 970px) {
+    .card-horizontal {
+        height: 20rem;
+        width: 40rem;
+    }
+
+    .card-horizontal>img {
+        width: 15rem;
+        margin-right: 1.5rem;
+    }
+
+
+    .card-horizontal .card-header {
+        padding-top: 2px;
+        font-size: 1.2rem;
+    }
+
+    .circular-btn {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        margin-left: 1px;
+        margin-right: 1px;
+        padding-top: 0.2px
+    }
+
+
+    .move-to-wishlist-btn {
+        margin-left: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .qty {
+
+        font-size: 1.2rem
+    }
+
+    .qty-input {
+        width: 25px;
+        text-align: center;
+        padding: 0.2px 0.5px;
+    }
+
+
+
 }

@@ -1,8 +1,9 @@
+import React from "react";
 import { Toast } from "components";
 import { useCart, useToast, useUser, useWishlist } from "context";
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ACTION_TYPE_SUCCESS } from "utils";
+import logo from "assets/img/rapidstore-logo.png";
 import "./header.css";
 
 export function Header() {
@@ -36,6 +37,7 @@ export function Header() {
           <a href="#">About Us</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Order Tracking</a>
+          <Link to="store">Store</Link>
         </div>
         <div className="right">
           <span>Need help? Call Us: 000 000 0000</span>
@@ -57,7 +59,7 @@ export function Header() {
 
       <nav className="navbar">
         <Link to="/" className="navbar-logo">
-          <img src="./assets/img/rapidstore.png" alt="rapid store" />
+          <img src={logo} className="logo" alt="rapid store" />
         </Link>
         <div className="search-box">
           <i className="fas fa-search"></i>
@@ -106,6 +108,7 @@ export function Header() {
           </li>
         </ul>
       </nav>
+
       <Toast />
     </>
   );

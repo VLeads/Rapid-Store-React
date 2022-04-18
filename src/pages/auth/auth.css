@@ -54,3 +54,15 @@
     font-size: 1.5rem;
     vertical-align: middle;
 }
+
+@media only screen and (max-width: 900px) {
+    .auth-container .card-vertical {
+        width: 28rem;
+        padding: 2rem 2.2rem
+    }
+
+    .select-box>label,
+    .forgot-pass {
+        font-size: 1.1rem
+    }
+}

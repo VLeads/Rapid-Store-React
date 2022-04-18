@@ -1,9 +1,9 @@
 ﻿<div align="center">
-<img src="./public/assets/img/rapidstore.png" alt="rapid store logo" width="300px" />
+<img src="./public/assets/img/rapidstore-logo.png" alt="rapid store logo" width="300px" />
 
 # Rapid Store
 
- [![GitHub followers](https://img.shields.io/github/followers/vleads?style=social)](https://github.com/vleads)
+[![GitHub followers](https://img.shields.io/github/followers/vleads?style=social)](https://github.com/vleads)
 &emsp;
 ![Forks](https://img.shields.io/github/forks/vleads/Rapid-Store-React)
 &emsp;
@@ -56,6 +56,7 @@ From **Navbar**
 - Login / Logout
 
   - Sign up by following link provided by Login page
+
 - My social media handles
 
 From **Homepage**
@@ -67,7 +68,7 @@ From **Homepage**
 
 From **Store (Products)** page
 
-- filter products based on your preference. Rapid store gives filter options for 
+- filter products based on your preference. Rapid store gives filter options for
 
   - filter by category
   - filter by range
@@ -89,11 +90,12 @@ From **Wishlist** page
 - remove Items from your Wishlist
 - add Items in your Cart
 
+Fully **Responsive**
+
 ---
 
 ## ✨ Features You will See in Future
 
-- Website responsiveness
 - Place Your Order from **Cart**
 
 ## 🔌 Getting Started
@@ -132,4 +134,3 @@ npm start
 <a href="https://twitter.com/vishalk01234"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
 <a href="https://www.linkedin.com/in/vishalkumar28//"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 <a href="https://github.com/VLeads"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
-

@@ -1,6 +1,7 @@
 .cart-container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .loading_heading {
@@ -15,9 +16,8 @@
     grid-gap: 1.5rem;
     padding: 0;
     justify-content: center;
+    margin-left: 1rem;
 }
-
-
 
 .price-detail-container {
     position: relative;
@@ -57,6 +57,7 @@
 }
 
 .price-heading {
+
     font-size: 1.6rem;
 }
 
@@ -72,4 +73,16 @@
 .order {
     width: 100%;
     padding: 1.5rem;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .cart-container {
+        margin: auto
+    }
+
+    .cart-product-main {
+        grid-template-columns: repeat(auto-fit, minmax(40rem, max-content));
+        grid-gap: 1.5rem;
+    }
 }

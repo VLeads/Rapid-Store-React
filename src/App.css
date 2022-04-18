@@ -1,0 +1,22 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+
+/* * Media Query * */
+
+@media only screen and (max-width: 40em) {
+    html {
+        font-size: 55%;
+    }
+
+    #toast {
+        min-width: 22rem;
+        max-width: 28rem;
+        overflow: hidden;
+        right: 2rem;
+        bottom: 25px;
+        font-size: 1.2rem;
+    }
+}

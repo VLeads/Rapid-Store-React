@@ -16,7 +16,7 @@ export const CartPriceCard = ({ details }) => {
         </div>
         <div className="price">
           <span className="price-heading">Discount</span>
-          <span className="amount">
+          <span className="amount text-red">
             − ₹{getNumbersInLocaleFormat(discountPrice)}
           </span>
         </div>
@@ -24,7 +24,7 @@ export const CartPriceCard = ({ details }) => {
           <span className="price-heading">Delivery Charges</span>
           {Number(totalPrice - discountPrice) > 349 ? (
             <>
-              <span className="amount">
+              <span className="amount text-red">
                 ₹0
                 <strike>₹200</strike>
               </span>
@@ -38,11 +38,11 @@ export const CartPriceCard = ({ details }) => {
           <span className="price-heading bold uppercase">total amount</span>
 
           {Number(totalPrice - discountPrice) > 349 ? (
-            <span className="amount bold uppercase">
+            <span className="amount bold uppercase text-primary">
               ₹{getNumbersInLocaleFormat(totalPrice - discountPrice)}{" "}
             </span>
           ) : (
-            <span className="amount bold uppercase">
+            <span className="amount bold uppercase text-primary">
               {" "}
               ₹
               {getNumbersInLocaleFormat(

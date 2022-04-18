@@ -184,7 +184,7 @@ export const Login = () => {
               setLoginFormData(testLogin);
             }}
           >
-            Login as Guest
+            Use test Credentials
           </button>
           <Link to="/signup" className="auth-alternative">
             New on Rapid Store? Sign Up

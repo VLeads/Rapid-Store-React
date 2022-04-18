@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 const Footer = () => {
@@ -12,7 +13,7 @@ const Footer = () => {
               <a href="#">My Account</a>
             </li>
             <li className="footer__list-item">
-              <a href="#">Wishlist</a>
+              <Link to="/wishlist">Wishlist</Link>
             </li>
             <li className="footer__list-item">
               <a href="#">Track Order</a>
