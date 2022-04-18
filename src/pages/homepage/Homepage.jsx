@@ -11,7 +11,7 @@ const Homepage = () => {
   return (
     <main className="homepage-main">
       <div className="hero">
-        <img src={heroPoster} alt="poster" loading="lazy" />
+        {/* <img src={heroPoster} alt="poster" loading="lazy" /> */}
 
         <Link to="/store">
           <button className="btn btn-primary">Shop Now</button>

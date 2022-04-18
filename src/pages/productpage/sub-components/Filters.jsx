@@ -1,7 +1,7 @@
 import React from "react";
 import { useFilter } from "context";
 
-export const Filters = () => {
+export const Filters = ({ isFilterVisible, setIsFilterVisible }) => {
   const {
     state: { sortByPrice, sortByRating, sortByRange, showCategory },
     dispatch,
@@ -18,7 +18,18 @@ export const Filters = () => {
   }
 
   return (
-    <aside className="sidebar-container">
+    <aside
+      className="sidebar-container"
+      style={isFilterVisible ? { display: "block" } : {}}
+    >
+      {isFilterVisible && (
+        <button
+          className="btn btn-close"
+          onClick={() => setIsFilterVisible(false)}
+        >
+          <i className="fas fa-times"></i>
+        </button>
+      )}
       <div className="sidebar">
         <div className="categories-container">
           <h4>Categories</h4>
