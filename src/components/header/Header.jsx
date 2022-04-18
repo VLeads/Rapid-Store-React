@@ -37,6 +37,7 @@ export function Header() {
           <a href="#">About Us</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Order Tracking</a>
+          <Link to="store">Store</Link>
         </div>
         <div className="right">
           <span>Need help? Call Us: 000 000 0000</span>
