@@ -102,6 +102,9 @@
         height: 25rem;
         background-image: url(assets/img/Rapidstore-poster.png);
     }
+    .category .category-card {
+        height: auto;
+    }
 }
 
 /* ---- mobile ----- */
