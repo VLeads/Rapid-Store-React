@@ -115,6 +115,11 @@
         background-position: left top;
         background-image: url(assets/img/poster-small.png);
     }
+    
+    .homepage-main {
+    padding: 2rem 1rem;
+ 
+}
 
     .hero>a>button {
         width: 12rem;
