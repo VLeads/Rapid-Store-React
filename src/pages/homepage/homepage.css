@@ -107,7 +107,7 @@
 /* ---- mobile ----- */
 @media only screen and (max-width: 480px) {
     .navbar-logo {
-        margin-left: 1rem;
+        margin-left: 0;
     }
 
     .hero {
@@ -118,8 +118,7 @@
     
     .homepage-main {
     padding: 2rem 1rem;
- 
-}
+    }
 
     .hero>a>button {
         width: 12rem;
