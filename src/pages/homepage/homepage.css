@@ -1,30 +1,41 @@
-
-.homepage-main{
+.homepage-main {
     width: 100%;
     padding: 2rem 3rem;
-    padding-top: 2rem
+    padding-top: 2rem;
+    max-width: 155rem;
+    margin: auto;
 }
 
-.hero{
+.hero {
     display: flex;
     position: relative;
 }
 
-.hero > img{
+/* .hero img {
     width: 100%;
     border-radius: 12px;
+} */
+
+.hero {
+    height: 30rem;
+    width: 100%;
+    border-radius: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: url(assets/img/Rapidstore-poster.png) */
 }
 
-.hero > a > button{
+.hero>a>button {
     position: absolute;
     top: 63%;
     left: 5.2rem;
     width: 17rem;
     height: 5rem;
-    border: 1px solid  #bf2b50
+    border: 1px solid #bf2b50
 }
 
-.hero > a > button:hover{
+.hero>a>button:hover {
     background-image: var(--primary-bg-gradient);
     box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
     transition: all .1s ease-in-out;
@@ -36,23 +47,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem;   
+    margin: 2rem;
     margin-bottom: 4rem;
 }
 
-.feature-main > h2 {
+.feature-main>h2 {
     margin: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid var(--black);
 }
 
-.feature-container{
+.feature-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.feature{
+.feature {
     display: flex;
     align-items: center;
     background-color: var(--xlight-blue);
@@ -64,15 +75,101 @@
     border-radius: 4px;
 }
 
-.feature > i{
+.feature>i {
     font-size: 4.5rem;
-    color:var(--primary-color);
+    color: var(--primary-color);
     margin-right: 1.5rem;
     margin-left: 1rem;
 }
 
-.feature > p {
+.feature>p {
     font-size: 2rem;
     width: 20rem;
 }
 
+/* ----- desktop --- */
+@media (min-width: 1025px) {
+    .hero {
+        background-position: left;
+        background-image: url(assets/img/Rapidstore-poster.png);
+    }
+}
+
+/* ----- tablets------  */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .hero {
+        background-position: left;
+        height: 25rem;
+        background-image: url(assets/img/Rapidstore-poster.png);
+    }
+    .category .category-card {
+        height: auto;
+    }
+}
+
+/* ---- mobile ----- */
+@media only screen and (max-width: 480px) {
+    .navbar-logo {
+        margin-left: 0;
+    }
+
+    .hero {
+        height: 19rem;
+        background-position: left top;
+        background-image: url(assets/img/poster-small.png);
+    }
+    
+    .homepage-main {
+    padding: 2rem 1rem;
+    }
+
+    .hero>a>button {
+        width: 12rem;
+        height: 4rem;
+        top: 66%;
+        left: 3rem
+    }
+
+    .feature-main {
+        margin: 5px;
+    }
+
+    .feature {
+        width: 16rem;
+        height: 8rem;
+        margin: 5px;
+    }
+
+    .feature>i {
+        margin: 5px
+    }
+
+    .feature>p {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .category>h2 {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .category .category-card {
+        width: 15rem;
+        height: auto;
+    }
+
+
+    .category-card .card-body h4 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        overflow-wrap: break-word;
+        overflow: hidden;
+
+    }
+
+    .category-card>img {
+        height: 8rem
+    }
+
+}

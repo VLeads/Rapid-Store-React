@@ -1,4 +1,4 @@
-.footer{
+.footer {
     width: 100%;
     height: auto;
     background-color: var(--dark-blue);
@@ -9,32 +9,61 @@
     margin-top: 4rem;
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     gap: 35rem;
-    padding-top: 4rem; 
+    padding-top: 4rem;
     flex-wrap: wrap;
 }
 
-.footer__item > h4{
+.footer__item>h4 {
     color: var(--grey);
     margin-bottom: 6px;
 }
 
-.footer__list{
+.footer__list {
     list-style: none;
     color: white;
     font-size: 1.5rem;
 }
 
-.footer__list-item{
+.footer__list-item {
     color: white;
     padding: 4px;
 }
 
-.footer-rights{
+.footer-rights {
     margin: 0;
     margin-bottom: 1.5rem;
     color: white;
     font-size: 1.4rem;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .footer-container {
+        gap: 15rem
+    }
+
+    .footer__item>h4 {
+        font-size: 1.6rem;
+    }
+
+    .footer__list {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer-container {
+        gap: 6rem
+    }
+
+
+    .footer__item>h4 {
+        font-size: 1.6rem;
+    }
+
+    .footer__list {
+        font-size: 1.1rem;
+    }
 }

@@ -7,6 +7,7 @@
     --hover-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     --red: #ee1010;
     --primary-bg-gradient: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    --card-shadow-dark: rgba(110, 109, 109, 0.2);
 }
 
 * {
@@ -41,7 +42,7 @@
     display: flex;
 }
 
-.space-between{
+.space-between {
     margin-left: auto;
 }
 
@@ -49,7 +50,7 @@
     text-transform: uppercase;
 }
 
-.btn-large{
+.btn-large {
     width: 18rem;
 }
 
@@ -83,4 +84,16 @@
 
 .popular-purchase {
     height: 30.5rem;
+}
+
+.text-red {
+    color: #ec1d1d;
+}
+
+.text-primary {
+    color: var(--primary-color)
+}
+
+.btn-info:hover {
+    color: inherit
 }

@@ -21,12 +21,6 @@ export const Cart = () => {
         <div className="cart-product-main">
           {authToken ? (
             <>
-              {isLoading && (
-                <div className="loading_heading">
-                  Loading your Cart's Item...
-                </div>
-              )}
-
               {data.length > 0 ? (
                 data.map((details) => (
                   <div key={details._id}>

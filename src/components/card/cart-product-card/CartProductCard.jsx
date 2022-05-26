@@ -103,7 +103,7 @@ export const CartProductCard = ({ details }) => {
               className="btn btn-info move-to-wishlist-btn"
               onClick={handleAddToWishlist}
             >
-              Remove to wishlist
+              Remove from wishlist
             </button>
           ) : (
             <button
