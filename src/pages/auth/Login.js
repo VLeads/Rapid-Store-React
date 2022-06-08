@@ -64,7 +64,7 @@ export const Login = () => {
           setShowToast(true);
           setTimeout(() => {
             navigate(location?.state?.from?.pathname || "/", { replace: true });
-            // navigate("/", { replace: true });
+
             setShowToast(false);
           }, 1800);
           localStorage.setItem("token", response.data.encodedToken);
