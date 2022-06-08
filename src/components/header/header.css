@@ -45,6 +45,10 @@
 
 }
 
+.pointer-cursor {
+    cursor: pointer;
+}
+
 .navbar .logo {
     width: 16rem;
     height: 5rem;

@@ -1,13 +1,16 @@
 import React from "react";
 import { Toast } from "components";
-import { useCart, useToast, useUser, useWishlist } from "context";
-import { Link, useNavigate } from "react-router-dom";
+import { useCart, useFilter, useToast, useUser, useWishlist } from "context";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ACTION_TYPE_SUCCESS } from "utils";
 import logo from "assets/img/rapidstore-logo.png";
 import "./header.css";
 
 export function Header() {
+  const { searchTerm, setSearchTerm } = useFilter();
+
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { getToken: authToken, setGetToken } = useUser();
 
@@ -28,6 +31,17 @@ export function Header() {
     localStorage.removeItem("token");
     setGetToken("");
     navigate("/", { replace: true });
+  };
+
+  const logoHandler = () => {
+    navigate("/");
+    setSearchTerm("");
+  };
+
+  const searchNavigateHandler = () => {
+    if (location.pathname !== "/store") {
+      navigate("/store");
+    }
   };
 
   return (
@@ -58,12 +72,17 @@ export function Header() {
       </div>
 
       <nav className="navbar">
-        <Link to="/" className="navbar-logo">
+        <div className="navbar-logo pointer-cursor" onClick={logoHandler}>
           <img src={logo} className="logo" alt="rapid store" />
-        </Link>
-        <div className="search-box">
+        </div>
+        <div className="search-box" onClick={searchNavigateHandler}>
           <i className="fas fa-search"></i>
-          <input type="text" placeholder="Search" />
+          <input
+            type="search"
+            placeholder="search products and categories"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
         <ul className="nav-links">
           <li>
