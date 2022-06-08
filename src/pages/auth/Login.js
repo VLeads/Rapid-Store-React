@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useToast, useUser } from "context";
 import {
   ACTION_TYPE_ERROR,
@@ -11,6 +11,7 @@ import "./auth.css";
 import { Toast } from "components";
 
 export const Login = () => {
+  const location = useLocation();
   const navigate = useNavigate();
 
   const { toastState, toastDispatch, showToast, setShowToast } = useToast();
@@ -29,6 +30,8 @@ export const Login = () => {
       [e.target.name]: value,
     }));
   };
+
+  console.log("path", location?.state || "/");
 
   const submitLoginHandler = (e) => {
     e.preventDefault();
@@ -62,7 +65,8 @@ export const Login = () => {
           });
           setShowToast(true);
           setTimeout(() => {
-            navigate("/", { replace: true });
+            navigate(location?.state?.from?.pathname || "/", { replace: true });
+            // navigate("/", { replace: true });
             setShowToast(false);
           }, 1800);
           localStorage.setItem("token", response.data.encodedToken);

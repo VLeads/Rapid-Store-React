@@ -1,4 +1,5 @@
-import { createContext, useContext, useReducer } from "react";
+import { useState, createContext, useContext, useReducer } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { getNumberFromFormattedPrice } from "utils";
 import { useProducts } from "./products-context";
@@ -6,6 +7,11 @@ import { useProducts } from "./products-context";
 const FilterContext = createContext(null);
 
 const FilterProvider = ({ children }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [searchTerm, setSearchTerm] = useState("");
+
   const { products } = useProducts();
   const { data } = products;
 
@@ -82,7 +88,7 @@ const FilterProvider = ({ children }) => {
 
   function getFilteredData(productList, state) {
     return productList
-      .filter(({ ratings }) =>
+      ?.filter(({ ratings }) =>
         state.sortByRating
           ? parseInt(ratings, 10) >= parseInt(state.sortByRating, 10)
           : productList
@@ -94,7 +100,28 @@ const FilterProvider = ({ children }) => {
       );
   }
 
-  const priceSortedData = getPriceSortedData(data, state.sortByPrice);
+  function filterSearch(data, searchInput) {
+    if (searchInput) {
+      if (location.pathname !== "/store") {
+        return setSearchTerm("");
+      } else {
+        return data?.filter(
+          ({ categoryName, heading }) =>
+            categoryName.toLowerCase().includes(searchInput.toLowerCase()) ||
+            heading.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      }
+    } else {
+      return data;
+    }
+  }
+
+  const searchFilteredData = filterSearch(data, searchTerm);
+
+  const priceSortedData = getPriceSortedData(
+    searchFilteredData,
+    state.sortByPrice
+  );
 
   const categoryIncludedData = getCategoryIncludedData(
     priceSortedData,
@@ -104,7 +131,9 @@ const FilterProvider = ({ children }) => {
   const filteredData = getFilteredData(categoryIncludedData, state);
 
   return (
-    <FilterContext.Provider value={{ state, dispatch, filteredData }}>
+    <FilterContext.Provider
+      value={{ state, dispatch, filteredData, searchTerm, setSearchTerm }}
+    >
       {children}
     </FilterContext.Provider>
   );

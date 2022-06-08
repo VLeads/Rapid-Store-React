@@ -26,6 +26,8 @@ export const ProductCard = ({ details, cardType }) => {
     isLoading: wishlistLoading,
   } = wishlist;
 
+  console.log("wishlist", wishlistData);
+
   const {
     cart,
     postDataUsingApi: postCartItem,

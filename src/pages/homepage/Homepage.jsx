@@ -6,6 +6,7 @@ import heroPoster from "../../assets/img/Rapidstore-poster.png";
 import { PopularPurchaseSection } from "./PopularPurchaseSection";
 import { CategoriesSection } from "./CategoriesSection";
 import { ChooseUsSection } from "./ChooseUsSection";
+import { useFilter } from "context";
 
 const Homepage = () => {
   return (
