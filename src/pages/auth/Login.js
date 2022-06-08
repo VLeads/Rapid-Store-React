@@ -31,8 +31,6 @@ export const Login = () => {
     }));
   };
 
-  console.log("path", location?.state || "/");
-
   const submitLoginHandler = (e) => {
     e.preventDefault();
     handleLogin(loginFormData.email, loginFormData.password);
