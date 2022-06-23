@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./auth.css";
 
@@ -63,7 +63,7 @@ export const Signup = () => {
           });
           setShowToast(true);
           setTimeout(() => {
-            navigate("/", { replace: true });
+            navigate(-1 || "/", { replace: true });
             setShowToast(false);
           }, 2000);
         }
@@ -101,6 +101,11 @@ export const Signup = () => {
       inputType === "password" ? "text" : "password"
     );
   };
+
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <main className="auth-container">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useUser, useWishlist } from "context";
 import { NoProduct, ProductCard } from "components";
 import { Link } from "react-router-dom";
@@ -9,6 +9,11 @@ export const Wishlist = () => {
   const { data, error, isLoading } = wishlist;
 
   const { getToken: authToken } = useUser();
+
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <main className="wishlist-main">

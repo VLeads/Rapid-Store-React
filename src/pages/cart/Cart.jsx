@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./cart.css";
 
 import { CartPriceCard, NoProduct, CartProductCard } from "components";
@@ -10,6 +10,11 @@ export const Cart = () => {
   const { cart } = useCart();
 
   const { data, isLoading, error } = cart;
+
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="cart-container">

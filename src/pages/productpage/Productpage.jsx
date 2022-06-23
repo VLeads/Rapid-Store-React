@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ProductCard } from "components";
 import { useProducts } from "context";
 import { useFilter } from "context/filter-context";
@@ -12,8 +12,13 @@ export const Productpage = () => {
 
   const { filteredData } = useFilter();
 
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    <div className="flex">
+    <div className="flex all-product-container">
       <Filters
         setIsFilterVisible={setIsFilterVisible}
         isFilterVisible={isFilterVisible}
