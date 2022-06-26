@@ -93,8 +93,6 @@ export function Header() {
           <input
             type="search"
             placeholder="search products and categories"
-            // value={searchTerm}
-            // onChange={(e) => setSearchTerm(e.target.value)}
             onChange={debounce((e) => setSearchTerm(e.target.value), 1000)}
           />
         </div>
