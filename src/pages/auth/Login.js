@@ -107,6 +107,7 @@ export const Login = () => {
   }, []);
 
   return (
+    <div className="min-height">
     <main className="auth-container">
       <Toast />
       <form
@@ -188,5 +189,6 @@ export const Login = () => {
         </div>
       </form>
     </main>
+    </div>
   );
 };

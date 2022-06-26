@@ -16,23 +16,25 @@ export const Wishlist = () => {
   }, []);
 
   return (
-    <main className="wishlist-main">
-      <h2 className="justify-center mb-3">
-        Wishlist ({authToken && data.length !== 0 ? data.length : 0})
-      </h2>
-      <div className="wishlist-card-container">
-        {data.length > 0 ? (
-          data.map((details) => (
-            <ul className="product-list grid " key={details._id}>
-              <li>
-                <ProductCard details={details} cardType={"wishlist"} />
-              </li>
+    <div className="min-height">
+      <main className="wishlist-main">
+        <h2 className="justify-center mb-3">
+          Wishlist ({authToken && data.length !== 0 ? data.length : 0})
+        </h2>
+        <div className="wishlist-card-container">
+          {data?.length > 0 ? (
+            <ul className="product-list grid">
+              {data?.map((details) => (
+                <li key={details._id}>
+                  <ProductCard details={details} cardType={"wishlist"} />
+                </li>
+              ))}
             </ul>
-          ))
-        ) : (
-          <NoProduct type="wishlist" />
-        )}
-      </div>
-    </main>
+          ) : (
+            <NoProduct type="wishlist" />
+          )}
+        </div>
+      </main>
+    </div>
   );
 };

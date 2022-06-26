@@ -44,6 +44,19 @@ export function Header() {
     }
   };
 
+  function debounce(cb, delay) {
+    let timer;
+    return function (...args) {
+      if (timer) {
+        clearTimeout(timer);
+      }
+
+      timer = setTimeout(() => {
+        cb(...args);
+      }, delay);
+    };
+  }
+
   return (
     <>
       <div className="sub-nav">
@@ -80,8 +93,9 @@ export function Header() {
           <input
             type="search"
             placeholder="search products and categories"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            // value={searchTerm}
+            // onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={debounce((e) => setSearchTerm(e.target.value), 1000)}
           />
         </div>
         <div>

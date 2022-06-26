@@ -12,10 +12,12 @@ export const NoProduct = ({ type }) => {
           Add Now
         </Link>
       </div>
-      <img
-        src={"https://www.linkpicture.com/q/emptycart_1.webp"}
-        className="img-responsive no-product-img"
-      />
+      <div className="no-prod-img">
+        <img
+          src={"https://www.linkpicture.com/q/emptycart_1.webp"}
+          className="img-responsive no-product-img"
+        />
+      </div>
     </div>
   );
 };

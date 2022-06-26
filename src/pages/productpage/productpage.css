@@ -21,6 +21,7 @@
 .product-container {
     margin-top: 2rem;
     margin-left: 3rem;
+    width: 120rem;
 }
 
 .result-heading {
@@ -44,6 +45,10 @@
     justify-content: center;
 }
 
+
+.no-search {
+    margin-top: 5rem
+}
 
 /* --- for sidebar --- */
 
@@ -164,8 +169,7 @@ ul {
 
 @media only screen and (max-width: 480px) {
     .product-container .card-container {
-
-        grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
+        grid-template-columns: repeat(auto-fit, minmax(18.2rem, max-content));
         gap: 0.8rem;
     }
 

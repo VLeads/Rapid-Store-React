@@ -22,9 +22,8 @@ import { CategoryProvider } from "context";
 
 function App() {
   return (
-    <div>
+    <div className="parent-container">
       <Header />
-
       <Routes>
         <Route
           path="/"

@@ -17,32 +17,36 @@ export const Cart = () => {
   }, []);
 
   return (
-    <div className="cart-container">
-      <section className="cart-product-container">
-        <h2 className="mb-3 mt-3 justify-center">
-          My Cart ({authToken && data.length !== 0 ? data.length : 0})
-        </h2>
+    <div className="min-height">
+      <div className="cart-container">
+        <section className="cart-product-container">
+          <h2 className="mb-3 mt-3 justify-center">
+            My Cart ({authToken && data.length !== 0 ? data.length : 0})
+          </h2>
 
-        <div className="cart-product-main">
-          {authToken ? (
-            <>
-              {data.length > 0 ? (
-                data.map((details) => (
-                  <div key={details._id}>
-                    <CartProductCard details={details} />
-                  </div>
-                ))
-              ) : (
-                <NoProduct type="cart" />
-              )}
-            </>
-          ) : (
-            <NoProduct type="cart" />
-          )}
-        </div>
-      </section>
+          <div className="cart-product-main">
+            {authToken ? (
+              <>
+                {data.length > 0 ? (
+                  data.map((details) => (
+                    <div key={details._id}>
+                      <CartProductCard details={details} />
+                    </div>
+                  ))
+                ) : (
+                  <NoProduct type="cart" />
+                )}
+              </>
+            ) : (
+              <NoProduct type="cart" />
+            )}
+          </div>
+        </section>
 
-      {data.length > 0 && <CartPriceCard details={getPriceCardDetails(data)} />}
+        {data.length > 0 && (
+          <CartPriceCard details={getPriceCardDetails(data)} />
+        )}
+      </div>
     </div>
   );
 };
