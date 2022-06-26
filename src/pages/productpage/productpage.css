@@ -1,6 +1,6 @@
 .sidebar-container {
     position: relative;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 .sidebar {
@@ -8,6 +8,7 @@
     border-right: 1px solid var(--primary-color);
     border-radius: 4px;
     padding: 3rem;
+    padding-left: 5px;
     padding-top: 2rem;
     overflow-y: auto;
     top: 10rem;
@@ -20,6 +21,7 @@
 .product-container {
     margin-top: 2rem;
     margin-left: 3rem;
+    width: 120rem;
 }
 
 .result-heading {
@@ -43,6 +45,10 @@
     justify-content: center;
 }
 
+
+.no-search {
+    margin-top: 5rem
+}
 
 /* --- for sidebar --- */
 
@@ -100,10 +106,18 @@ ul {
     list-style: none;
 }
 
+.all-product-container {
+    justify-content: center;
+}
+
 @media only screen and (max-width: 870px) {
 
     .result-heading {
         margin: 0.5rem
+    }
+
+    .all-product-container {
+        justify-content: unset;
     }
 
     .sidebar-container {
@@ -155,8 +169,11 @@ ul {
 
 @media only screen and (max-width: 480px) {
     .product-container .card-container {
-
-        grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
+        grid-template-columns: repeat(auto-fit, minmax(18.2rem, max-content));
         gap: 0.8rem;
+    }
+
+    .all-product-container {
+        justify-content: unset;
     }
 }

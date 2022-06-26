@@ -84,7 +84,7 @@ export const ProductCard = ({ details, cardType }) => {
         </div>
         <div className="card-footer">
           {cartData.findIndex((element) => element._id === details._id) !==
-          -1 ? (
+            -1 && authToken ? (
             <Link to="/cart">
               <button className="btn btn-success btn-large">Go to Cart</button>
             </Link>
@@ -101,7 +101,8 @@ export const ProductCard = ({ details, cardType }) => {
 
           <button
             className={`btn-card ${
-              wishlistData.findIndex((element) => element._id === _id) !== -1
+              wishlistData.findIndex((element) => element._id === _id) !== -1 &&
+              authToken
                 ? "heart-select"
                 : ""
             }`}
@@ -109,7 +110,8 @@ export const ProductCard = ({ details, cardType }) => {
               authToken ? handleAddToWishlist() : navigate("/login");
             }}
           >
-            {wishlistData.findIndex((element) => element._id === _id) !== -1 ? (
+            {wishlistData.findIndex((element) => element._id === _id) !== -1 &&
+            authToken ? (
               <i className="fa fa-heart"></i>
             ) : (
               <i className="far fa-heart "></i>

@@ -3,6 +3,14 @@ html {
     scroll-behavior: smooth;
 }
 
+.parent-container {
+    max-width: 155rem;
+    margin: auto;
+}
+
+.min-height {
+    min-height: 60vh;
+}
 
 /* * Media Query * */
 

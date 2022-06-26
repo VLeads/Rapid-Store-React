@@ -1,12 +1,15 @@
 .footer {
     width: 100%;
+
     height: auto;
     background-color: var(--dark-blue);
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    margin-top: 4rem;
+    margin: auto;
+    margin-top: 1.2rem;
+    max-width: 155rem;
 }
 
 .footer-container {

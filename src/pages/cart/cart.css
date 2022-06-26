@@ -85,4 +85,8 @@
         grid-template-columns: repeat(auto-fit, minmax(40rem, max-content));
         grid-gap: 1.5rem;
     }
+
+    .no-product-heading {
+        font-size: 2.5rem;
+    }
 }

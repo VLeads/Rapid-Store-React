@@ -37,71 +37,60 @@ export const Login = () => {
   };
 
   const handleLogin = async (email, password) => {
-    if (password.length < 6 || !testAlphaNumericString(password)) {
-      setShowToast(true);
-      toastDispatch({
-        type: ACTION_TYPE_ERROR,
-        payload:
-          "⚠ Password should be Alpha Numeric and have minimum 6 characters.",
-      });
-      setTimeout(() => {
-        setShowToast(false);
-      }, 3500);
-    } else {
-      try {
-        const response = await postLoginDetailsApi(
-          JSON.stringify({
-            email: email,
-            password: password,
-          })
-        );
-        if (response.status === 200) {
-          setIsLoggedin(true);
-          toastDispatch({
-            type: ACTION_TYPE_SUCCESS,
-            payload: `✅ Loggedin successfully ${response.data.foundUser.firstName}. Grab the best deals 🎉 `,
-          });
-          setShowToast(true);
-          setTimeout(() => {
-            navigate(location?.state?.from?.pathname || "/", { replace: true });
+    try {
+      const response = await postLoginDetailsApi(
+        JSON.stringify({
+          email: email,
+          password: password,
+        })
+      );
+      if (response.status === 200) {
+        setIsLoggedin(true);
+        toastDispatch({
+          type: ACTION_TYPE_SUCCESS,
+          payload: `✅ Loggedin successfully ${response.data.foundUser.firstName}. Grab the best deals 🎉 `,
+        });
+        setShowToast(true);
 
-            setShowToast(false);
-          }, 1800);
-          localStorage.setItem("token", response.data.encodedToken);
+        setTimeout(() => {
+          navigate(-1 || "/", { replace: true });
 
-          setGetToken(response.data.encodedToken);
-        }
-      } catch (error) {
-        const { status, statusText } = error?.response;
+          setShowToast(false);
+        }, 1800);
+        localStorage.setItem("token", response.data.encodedToken);
 
-        if (status === 401 && statusText === "Unauthorized") {
-          toastDispatch({
-            type: ACTION_TYPE_ERROR,
-            payload: "⚠ You have entered either incorrect Email or Password",
-          });
-          setShowToast(true);
-          setTimeout(() => {
-            setShowToast(false);
-          }, 2500);
-        } else if (status === 404 && statusText === "Not Found") {
-          toastDispatch({
-            type: ACTION_TYPE_ERROR,
-            payload: "⚠ Email is not registered",
-          });
-          setShowToast(true);
-          setTimeout(() => {
-            setShowToast(false);
-          }, 2500);
-        } else {
-          toastDispatch({
-            type: ACTION_TYPE_ERROR,
-            payload: "⚠ Something Wrong Happened",
-          });
-          setShowToast(true);
-          setTimeout(() => {
-            setShowToast(false);
-          }, 2500);
-        }
+        setGetToken(response.data.encodedToken);
+      }
+    } catch (error) {
+      const { status, statusText } = error?.response;
+      console.log("test", error);
+      if (status === 401 && statusText === "Unauthorized") {
+        toastDispatch({
+          type: ACTION_TYPE_ERROR,
+          payload: "⚠ You have entered either incorrect Email or Password",
+        });
+        setShowToast(true);
+        setTimeout(() => {
+          setShowToast(false);
+        }, 2500);
+      } else if (status === 404 && statusText === "Not Found") {
+        toastDispatch({
+          type: ACTION_TYPE_ERROR,
+          payload: "⚠ Email is not registered",
+        });
+        setShowToast(true);
+        setTimeout(() => {
+          setShowToast(false);
+        }, 2500);
+      } else {
+        toastDispatch({
+          type: ACTION_TYPE_ERROR,
+          payload: "⚠ Something Wrong Happened",
+        });
+        setShowToast(true);
+        setTimeout(() => {
+          setShowToast(false);
+        }, 2500);
       }
     }
   };
@@ -112,7 +101,13 @@ export const Login = () => {
     );
   };
 
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
+    <div className="min-height">
     <main className="auth-container">
       <Toast />
       <form
@@ -167,8 +162,8 @@ export const Login = () => {
           </div>
 
           <div className="select-box">
-            <label htmlFor="accept">
-              <input type="checkbox" name="accept" />
+            <label style={{ cursor: "pointer" }}>
+              <input type="checkbox" />
               Remember me
             </label>
             <a className="forgot-pass" href="">
@@ -194,5 +189,6 @@ export const Login = () => {
         </div>
       </form>
     </main>
+    </div>
   );
 };

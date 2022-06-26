@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./styles/styles.css";
@@ -21,9 +22,8 @@ import { CategoryProvider } from "context";
 
 function App() {
   return (
-    <div>
+    <div className="parent-container">
       <Header />
-
       <Routes>
         <Route
           path="/"

@@ -10,6 +10,7 @@
 
 }
 
+
 .sub-nav a {
     color: var(--dark-grey);
     padding: 0 0.6rem;
@@ -30,20 +31,19 @@
     border: none;
 }
 
-
 .navbar {
+    height: auto;
     position: sticky;
     z-index: 1;
     top: 0;
-    max-width: 155rem;
     margin: auto;
+    max-width: 155rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: auto;
     padding: 1.2rem 2rem;
-
 }
+
 
 .pointer-cursor {
     cursor: pointer;

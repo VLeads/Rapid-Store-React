@@ -44,6 +44,19 @@ export function Header() {
     }
   };
 
+  function debounce(cb, delay) {
+    let timer;
+    return function (...args) {
+      if (timer) {
+        clearTimeout(timer);
+      }
+
+      timer = setTimeout(() => {
+        cb(...args);
+      }, delay);
+    };
+  }
+
   return (
     <>
       <div className="sub-nav">
@@ -80,52 +93,52 @@ export function Header() {
           <input
             type="search"
             placeholder="search products and categories"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={debounce((e) => setSearchTerm(e.target.value), 1000)}
           />
         </div>
-        <ul className="nav-links">
-          <li>
-            {authToken ? (
-              <button className="btn btn-danger" onClick={logoutHandler}>
-                Logout
-              </button>
-            ) : (
-              <Link to="/login">
-                <button className="btn btn-primary">Login</button>
+        <div>
+          <ul className="nav-links">
+            <li>
+              {authToken ? (
+                <button className="btn btn-danger" onClick={logoutHandler}>
+                  Logout
+                </button>
+              ) : (
+                <Link to="/login">
+                  <button className="btn btn-primary">Login</button>
+                </Link>
+              )}
+            </li>
+            <li>
+              <Link to="/wishlist">
+                <span className="badge-icon">
+                  <span className="badge badge-count red">
+                    {authToken
+                      ? wishlist.data.length > 20
+                        ? "20+"
+                        : wishlist.data.length
+                      : "0"}
+                  </span>
+                  <i className="far fa-heart"></i>
+                </span>
               </Link>
-            )}
-          </li>
-          <li>
-            <Link to="/wishlist">
-              <span className="badge-icon">
-                {/* <span className="badge red">20+</span> */}
-                <span className="badge badge-count red">
-                  {authToken
-                    ? wishlist.data.length > 20
-                      ? "20+"
-                      : wishlist.data.length
-                    : "0"}
+            </li>
+            <li>
+              <Link to="/cart">
+                <span className="badge-icon">
+                  <span className="badge badge-count blue">
+                    {authToken
+                      ? cart.data.length > 20
+                        ? "20+"
+                        : cart.data.length
+                      : "0"}
+                  </span>
+                  <i className="far fa-shopping-cart"></i>
                 </span>
-                <i className="far fa-heart"></i>
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/cart">
-              <span className="badge-icon">
-                <span className="badge badge-count blue">
-                  {authToken
-                    ? cart.data.length > 20
-                      ? "20+"
-                      : cart.data.length
-                    : "0"}
-                </span>
-                <i className="far fa-shopping-cart"></i>
-              </span>
-            </Link>
-          </li>
-        </ul>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <Toast />

@@ -1,4 +1,11 @@
-import { useState, createContext, useContext, useReducer } from "react";
+import {
+  useState,
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  useRef,
+} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { getNumberFromFormattedPrice } from "utils";
@@ -9,6 +16,8 @@ const FilterContext = createContext(null);
 const FilterProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const timerId = useRef();
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -75,13 +84,13 @@ const FilterProvider = ({ children }) => {
   }
 
   function getCategoryIncludedData(productList, category) {
-    const filteredCategoryList = state.showCategory;
-    return filteredCategoryList.length === 0
+    const filteredCategoryList = state?.showCategory;
+    return filteredCategoryList?.length === 0
       ? productList
       : [...productList].filter((category) =>
-          filteredCategoryList.some(
+          filteredCategoryList?.some(
             (selectedCategory) =>
-              selectedCategory === category.categoryName.toUpperCase()
+              selectedCategory === category?.categoryName.toUpperCase()
           )
         );
   }
@@ -127,7 +136,6 @@ const FilterProvider = ({ children }) => {
     priceSortedData,
     state.showCategory
   );
-
   const filteredData = getFilteredData(categoryIncludedData, state);
 
   return (
