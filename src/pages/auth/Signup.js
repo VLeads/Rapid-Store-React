@@ -69,6 +69,10 @@ export const Signup = () => {
         }
 
         localStorage.setItem("token", response.data.encodedToken);
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify(response.data.foundUser)
+        );
 
         setGetToken(response.data.encodedToken);
       } catch (error) {

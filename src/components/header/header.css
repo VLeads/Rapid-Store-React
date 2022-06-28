@@ -58,6 +58,23 @@
     font-size: 1.4rem
 }
 
+.store-link {
+    color: var(--primary-color);
+    font-size: 2rem;
+
+}
+
+.store-link:hover {
+    color: #1f70c2;
+}
+
+.my-icon {
+    font-size: 2.5rem;
+    color: #0f0e0e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 900px) {
     .search-box {
         order: 1;

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./cart.css";
 
-import { CartPriceCard, NoProduct, CartProductCard } from "components";
+import { CartPriceCard, NoProduct, CartProductCard, Toast } from "components";
 import { useCart, useUser } from "context";
 import { getPriceCardDetails } from "utils";
 
