@@ -92,7 +92,7 @@ From **Wishlist** page
 
 **Profile** page
 
-Fully **Responsive**
+✨ Fully **Responsive**
 
 ✨ Place Your Order from **Cart**
 
