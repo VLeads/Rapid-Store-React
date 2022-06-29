@@ -40,15 +40,16 @@ export const Productpage = () => {
 
         <div className="card-container">
           {isLoading && <div>Loading All Products</div>}
-          {!isLoading && filteredData?.length !== 0 ? (
+          {!isLoading &&
+            filteredData?.length !== 0 &&
             filteredData?.map((details) => (
               <ul className="product-list grid " key={details._id}>
                 <li>
                   <ProductCard details={details} />
                 </li>
               </ul>
-            ))
-          ) : (
+            ))}
+          {!isLoading && filteredData?.length === 0 && (
             <div className="flex flex-center flex-col no-search">
               <img src={notfound} alt="no product found" />
 

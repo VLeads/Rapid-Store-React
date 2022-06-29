@@ -75,6 +75,17 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 970px) {
+    .navbar .nav-links>li {
+        margin-left: 8px;
+        margin-right: 9px;
+    }
+
+    .navbar .nav-links>li:last-child {
+        margin-right: 5px;
+    }
+}
+
 @media only screen and (max-width: 900px) {
     .search-box {
         order: 1;
@@ -93,15 +104,6 @@
     .navbar .logo {
         width: 12rem;
         height: 4rem;
-    }
-
-    .navbar .nav-links>li {
-        margin-left: 8px;
-        margin-right: 9px;
-    }
-
-    .navbar .nav-links>li:last-child {
-        margin-right: 5px;
     }
 
     .sub-nav {
