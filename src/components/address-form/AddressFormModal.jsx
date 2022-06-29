@@ -19,10 +19,7 @@ export const AddressFormModal = ({
 }) => {
   const [address, setAddress] = useState("");
   const [finalPrice, setFinalPrice] = useState(0);
-  // const [responseSummary, setResponseSummary] = useState({
-  //   msg: false,
-  //   id: null,
-  // });
+
   const [currUser, setCurrUser] = useState();
 
   const { cart, deleteDataUsingApi: deleteCartItem } = useCart();
@@ -124,7 +121,7 @@ export const AddressFormModal = ({
           />
           <label className="address-label" htmlFor="address-1">
             <h3>Vishal Kumar</h3>
-            <p>Chandigarh, Punjab, 160064</p>
+            <p>Edge colony, Chandigarh, Punjab, 160064</p>
           </label>
         </div>
         <div className="checkout-address-box">
@@ -136,8 +133,8 @@ export const AddressFormModal = ({
             onChange={() => setAddress("address-2")}
           />
           <label className="address-label" htmlFor="address-2">
-            <h3>Amarjit Singh</h3>
-            <p>Mumbai, Maharashtra, 362067</p>
+            <h3>Akash Ak</h3>
+            <p>Powder gali, Mumbai, Maharashtra, 362067</p>
           </label>
         </div>
         <button

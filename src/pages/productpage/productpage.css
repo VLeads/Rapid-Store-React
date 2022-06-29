@@ -34,7 +34,7 @@
 
 .product-list {
     list-style: none;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr); */
 }
 
 .product-container .card-container {
@@ -175,5 +175,9 @@ ul {
 
     .all-product-container {
         justify-content: unset;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

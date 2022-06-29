@@ -10,12 +10,12 @@ import {
   testAlphaNumericString,
 } from "utils";
 import { Toast } from "components";
-import { useToast, useUser } from "context";
+import { useUser } from "context";
+import { toast } from "react-toastify";
 
 export const Signup = () => {
   const navigate = useNavigate();
 
-  const { toastState, toastDispatch, showToast, setShowToast } = useToast();
   const { setIsLoggedin, getToken, setGetToken } = useUser();
   const [inputType, setInputType] = useState("password");
   const [signupFormData, setSignupFormData] = useState({
@@ -39,15 +39,9 @@ export const Signup = () => {
       signupFormData.password.length < 6 ||
       !testAlphaNumericString(signupFormData.password)
     ) {
-      toastDispatch({
-        type: ACTION_TYPE_ERROR,
-        payload:
-          "Password should be Alpha Numeric and have min. 6 characters length.",
-      });
-      setShowToast(true);
-      setTimeout(() => {
-        setShowToast(false);
-      }, 2500);
+      toast.error(
+        "Password should be Alpha Numeric and have min. 6 characters length."
+      );
     } else {
       try {
         const response = await postSignUpDetailsApi(
@@ -57,44 +51,28 @@ export const Signup = () => {
         );
         if (response.status === 201) {
           setIsLoggedin(true);
-          toastDispatch({
-            type: ACTION_TYPE_SUCCESS,
-            payload: `✅ Now you're Signed In ${response.data.createdUser.firstName}. Grab the best deals 🎉 `,
-          });
-          setShowToast(true);
+          toast.success(
+            `Successfully signed In ${response.data?.createdUser.firstName}. Grab the best deals 🎉`
+          );
+
           setTimeout(() => {
             navigate(-1 || "/", { replace: true });
-            setShowToast(false);
           }, 2000);
         }
 
         localStorage.setItem("token", response.data.encodedToken);
         localStorage.setItem(
           "currentUser",
-          JSON.stringify(response.data.foundUser)
+          JSON.stringify(response?.data?.createdUser)
         );
 
         setGetToken(response.data.encodedToken);
       } catch (error) {
         const { status, statusText } = error.response;
         if (status === 422 && statusText === "Unprocessable Entity") {
-          toastDispatch({
-            type: ACTION_TYPE_ERROR,
-            payload: "⚠ Email Already Exists",
-          });
-          setShowToast(true);
-          setTimeout(() => {
-            setShowToast(false);
-          }, 28000);
+          toast.error("Email already exists!");
         } else {
-          toastDispatch({
-            type: ACTION_TYPE_ERROR,
-            payload: "Something Wrong Happened",
-          });
-          setShowToast(true);
-          setTimeout(() => {
-            setShowToast(false);
-          }, 2000);
+          toast.error("Something wrong happened!");
         }
       }
     }

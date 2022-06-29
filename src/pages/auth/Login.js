@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useToast, useUser } from "context";
+import { useUser } from "context";
 import {
   ACTION_TYPE_ERROR,
   ACTION_TYPE_SUCCESS,
@@ -15,7 +15,6 @@ export const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { toastState, toastDispatch, showToast, setShowToast } = useToast();
   const { setIsLoggedin, getToken, setGetToken } = useUser();
   const [inputType, setInputType] = useState("password");
   const [loginFormData, setLoginFormData] = useState({
@@ -49,7 +48,7 @@ export const Login = () => {
         setIsLoggedin(true);
 
         toast.success(
-          `Loggedin successfully ${response.data.foundUser.firstName}. Grab the best deals 🎉`
+          `Welcome back ${response.data.foundUser.firstName}. Grab the best deals 🎉`
         );
 
         setTimeout(() => {

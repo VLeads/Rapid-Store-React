@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useToast, useUser } from "context";
+import { useUser } from "context";
 import { useNavigate } from "react-router-dom";
 import "./profile.css";
 import { ACTION_TYPE_SUCCESS } from "utils";
+import { toast } from "react-toastify";
 
 export const Profile = () => {
   const navigate = useNavigate();
-  const { toastDispatch, setShowToast } = useToast();
   const { getToken: authToken, setGetToken } = useUser();
   const [currentUser, setCurrentUser] = useState({});
 
@@ -14,15 +14,11 @@ export const Profile = () => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
+  console.log("curr", currentUser);
+
   const logoutHandler = () => {
-    setShowToast(true);
-    toastDispatch({
-      type: ACTION_TYPE_SUCCESS,
-      payload: `✅ Successfully logged out `,
-    });
-    setTimeout(() => {
-      setShowToast(false);
-    }, 2500);
+    toast.success("Successfully logged out");
+
     localStorage.removeItem("token");
     localStorage.removeItem("currentUser");
     setGetToken("");
