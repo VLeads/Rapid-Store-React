@@ -67,14 +67,14 @@ const FilterProvider = ({ children }) => {
   // replace method added
   function getPriceSortedData(productList, sortByPrice) {
     if (sortByPrice && sortByPrice === "HIGH_TO_LOW") {
-      return productList.sort(
+      return productList?.sort(
         (a, b) =>
           getNumberFromFormattedPrice(b.price["ourPrice"]) -
           getNumberFromFormattedPrice(a.price["ourPrice"])
       );
     }
     if (sortByPrice && sortByPrice === "LOW_TO_HIGH") {
-      return productList.sort(
+      return productList?.sort(
         (a, b) =>
           getNumberFromFormattedPrice(a.price["ourPrice"]) -
           getNumberFromFormattedPrice(b.price["ourPrice"])
@@ -87,7 +87,7 @@ const FilterProvider = ({ children }) => {
     const filteredCategoryList = state?.showCategory;
     return filteredCategoryList?.length === 0
       ? productList
-      : [...productList].filter((category) =>
+      : productList?.filter((category) =>
           filteredCategoryList?.some(
             (selectedCategory) =>
               selectedCategory === category?.categoryName.toUpperCase()
@@ -131,7 +131,7 @@ const FilterProvider = ({ children }) => {
     searchFilteredData,
     state.sortByPrice
   );
-
+  console.log("test", priceSortedData);
   const categoryIncludedData = getCategoryIncludedData(
     priceSortedData,
     state.showCategory

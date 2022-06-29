@@ -14,8 +14,6 @@ export const Profile = () => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
-  console.log("curr", currentUser);
-
   const logoutHandler = () => {
     toast.success("Successfully logged out");
 

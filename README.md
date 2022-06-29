@@ -1,5 +1,5 @@
 ﻿<div align="center">
-<img src="./public/assets/img/rapidstore-logo.png" alt="rapid store logo" width="300px" />
+<img src="./public/assets/img/rapidstore-bg.png" alt="rapid store logo" width="300px" />
 
 # Rapid Store
 
@@ -90,13 +90,15 @@ From **Wishlist** page
 - remove Items from your Wishlist
 - add Items in your Cart
 
+**Profile** page
+
 Fully **Responsive**
 
+✨ Place Your Order from **Cart**
+
+✨ **Razorpay payment integration**
+
 ---
-
-## ✨ Features You will See in Future
-
-- Place Your Order from **Cart**
 
 ## 🔌 Getting Started
 
