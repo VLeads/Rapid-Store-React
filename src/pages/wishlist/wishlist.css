@@ -14,7 +14,13 @@
     color: var(--red);
 }
 
+@media only screen and (max-width: 1148px) {
+    .product-list {
+        list-style: none;
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+}
 
 @media only screen and (max-width: 870px) {
     .wishlist-card-container {
@@ -25,9 +31,18 @@
 
 }
 
+@media only screen and (max-width: 597px) {
+    .product-list {
+        list-style: none;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
 @media only screen and (max-width: 480px) {
     .wishlist-card-container {
         grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
         gap: 0.8rem;
     }
+
 }

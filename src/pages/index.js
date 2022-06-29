@@ -6,4 +6,3 @@ export { Signup } from "./auth/Signup";
 export { Login } from "./auth/Login";
 export { Error404 } from "./error-404/Error404";
 export { Profile } from "./profile/Profile";
-export { Checkout } from "./checkout/Checkout";

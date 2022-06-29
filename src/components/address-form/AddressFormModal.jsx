@@ -18,9 +18,9 @@ export const AddressFormModal = ({
   setResponseSummary,
 }) => {
   const [address, setAddress] = useState("");
-  const [finalPrice, setFinalPrice] = useState(0);
 
   const [currUser, setCurrUser] = useState();
+  const [finalPrice, setFinalPrice] = useState(0);
 
   const { cart, deleteDataUsingApi: deleteCartItem } = useCart();
   console.log("cart", cart);
@@ -33,7 +33,7 @@ export const AddressFormModal = ({
     Number(totalPrice - discountPrice) > 349
       ? totalPrice - discountPrice
       : totalPrice - discountPrice + deliveryCharges;
-  console.log("price", grandTotal);
+
   const clearCart = () => {
     cart.data.forEach((el) => {
       deleteCartItem(deleteCartItemApi, el._id);

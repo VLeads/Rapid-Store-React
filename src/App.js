@@ -13,7 +13,6 @@ import { Header, Footer, RequiresAuth, RestrictAuth } from "./components";
 
 import {
   Cart,
-  Checkout,
   Error404,
   Homepage,
   Login,
@@ -42,7 +41,6 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route element={<RestrictAuth />}>
           <Route path="/signup" element={<Signup />} />
