@@ -1,6 +1,6 @@
 import React from "react";
 import { Toast } from "components";
-import { useCart, useFilter, useToast, useUser, useWishlist } from "context";
+import { useCart, useFilter, useUser, useWishlist } from "context";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ACTION_TYPE_SUCCESS } from "utils";
 import logo from "assets/img/rapidstore-logo.png";
@@ -14,8 +14,6 @@ export function Header() {
   const location = useLocation();
 
   const { getToken: authToken, setGetToken } = useUser();
-
-  const { toastDispatch, setShowToast } = useToast();
 
   const { wishlist } = useWishlist();
   const { cart } = useCart();

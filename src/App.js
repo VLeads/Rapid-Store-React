@@ -52,7 +52,7 @@ function App() {
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
-      <ToastContainer />
+      <ToastContainer position="top-center" />
     </div>
   );
 }

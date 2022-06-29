@@ -4,11 +4,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { getNumbersInLocaleFormat } from "utils";
 
-export const CartPriceCard = ({ details }) => {
+export const CartPriceCard = ({
+  details,
+  responseSummary,
+  setResponseSummary,
+}) => {
   const [addressModalShow, setAddressModalShow] = useState(false);
 
   const { totalPrice, discountPrice, items } = details;
-  
 
   let deliveryCharges = 200;
   return (
@@ -73,6 +76,8 @@ export const CartPriceCard = ({ details }) => {
         totalPrice={totalPrice}
         discountPrice={discountPrice}
         deliveryCharges={deliveryCharges}
+        responseSummary={responseSummary}
+        setResponseSummary={setResponseSummary}
       />
     </section>
   );

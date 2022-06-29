@@ -3,7 +3,7 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import "./addressModal.css";
 import { ACTION_TYPE_ERROR, deleteCartItemApi } from "utils";
-import { useCart, useToast, useUser } from "context";
+import { useCart, useUser } from "context";
 
 import brandLogo from "assets/img/store-logo1.png";
 import { toast } from "react-toastify";
@@ -14,13 +14,15 @@ export const AddressFormModal = ({
   totalPrice,
   discountPrice,
   deliveryCharges,
+  responseSummary,
+  setResponseSummary,
 }) => {
   const [address, setAddress] = useState("");
   const [finalPrice, setFinalPrice] = useState(0);
-  const [responseSummary, setResponseSummary] = useState({
-    msg: false,
-    id: null,
-  });
+  // const [responseSummary, setResponseSummary] = useState({
+  //   msg: false,
+  //   id: null,
+  // });
   const [currUser, setCurrUser] = useState();
 
   const { cart, deleteDataUsingApi: deleteCartItem } = useCart();

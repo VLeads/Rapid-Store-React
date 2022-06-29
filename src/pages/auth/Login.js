@@ -9,6 +9,7 @@ import {
 } from "utils";
 import "./auth.css";
 import { Toast } from "components";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const location = useLocation();
@@ -46,16 +47,13 @@ export const Login = () => {
       );
       if (response.status === 200) {
         setIsLoggedin(true);
-        toastDispatch({
-          type: ACTION_TYPE_SUCCESS,
-          payload: `✅ Loggedin successfully ${response.data.foundUser.firstName}. Grab the best deals 🎉 `,
-        });
-        setShowToast(true);
+
+        toast.success(
+          `Loggedin successfully ${response.data.foundUser.firstName}. Grab the best deals 🎉`
+        );
 
         setTimeout(() => {
           navigate(-1 || "/", { replace: true });
-
-          setShowToast(false);
         }, 1800);
         localStorage.setItem("token", response.data.encodedToken);
         localStorage.setItem(
@@ -69,32 +67,11 @@ export const Login = () => {
       const { status, statusText } = error?.response;
       console.log("test", error);
       if (status === 401 && statusText === "Unauthorized") {
-        toastDispatch({
-          type: ACTION_TYPE_ERROR,
-          payload: "⚠ You have entered either incorrect Email or Password",
-        });
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-        }, 2500);
+        toast.error("You have entered either incorrect Email or Password");
       } else if (status === 404 && statusText === "Not Found") {
-        toastDispatch({
-          type: ACTION_TYPE_ERROR,
-          payload: "⚠ Email is not registered",
-        });
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-        }, 2500);
+        toast.error("Email is not registered");
       } else {
-        toastDispatch({
-          type: ACTION_TYPE_ERROR,
-          payload: "⚠ Something Wrong Happened",
-        });
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-        }, 2500);
+        toast.error("Something wrong happened!");
       }
     }
   };
