@@ -1,9 +1,19 @@
-import React from "react";
+import { AddressFormModal } from "components";
+import { useCart } from "context";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { getNumbersInLocaleFormat } from "utils";
 
-export const CartPriceCard = ({ details }) => {
+export const CartPriceCard = ({
+  details,
+  responseSummary,
+  setResponseSummary,
+}) => {
+  const [addressModalShow, setAddressModalShow] = useState(false);
+
   const { totalPrice, discountPrice, items } = details;
 
+  let deliveryCharges = 200;
   return (
     <section className="price-detail-container">
       <div className="card-vertical price-details">
@@ -52,8 +62,23 @@ export const CartPriceCard = ({ details }) => {
           )}
         </div>
 
-        <button className="btn btn-primary order mt-3">Place Order</button>
+        <button
+          className="btn btn-primary order mt-3"
+          onClick={() => setAddressModalShow(true)}
+        >
+          Checkout
+        </button>
       </div>
+
+      <AddressFormModal
+        show={addressModalShow}
+        onHide={() => setAddressModalShow(false)}
+        totalPrice={totalPrice}
+        discountPrice={discountPrice}
+        deliveryCharges={deliveryCharges}
+        responseSummary={responseSummary}
+        setResponseSummary={setResponseSummary}
+      />
     </section>
   );
 };

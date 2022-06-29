@@ -10,13 +10,13 @@ const Footer = () => {
           <h4>Account</h4>
           <ul className="footer__list">
             <li className="footer__list-item">
-              <a href="#">My Account</a>
+              <Link to="/profile">My Account</Link>
             </li>
             <li className="footer__list-item">
               <Link to="/wishlist">Wishlist</Link>
             </li>
             <li className="footer__list-item">
-              <a href="#">Track Order</a>
+              <Link to="/cart">My Cart</Link>
             </li>
           </ul>
         </div>

@@ -1,10 +1,11 @@
 import React from "react";
 import { Toast } from "components";
-import { useCart, useFilter, useToast, useUser, useWishlist } from "context";
+import { useCart, useFilter, useUser, useWishlist } from "context";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ACTION_TYPE_SUCCESS } from "utils";
 import logo from "assets/img/rapidstore-logo.png";
 import "./header.css";
+import { UserIcon } from "assets/icons";
 
 export function Header() {
   const { searchTerm, setSearchTerm } = useFilter();
@@ -14,24 +15,8 @@ export function Header() {
 
   const { getToken: authToken, setGetToken } = useUser();
 
-  const { toastDispatch, setShowToast } = useToast();
-
   const { wishlist } = useWishlist();
   const { cart } = useCart();
-
-  const logoutHandler = () => {
-    setShowToast(true);
-    toastDispatch({
-      type: ACTION_TYPE_SUCCESS,
-      payload: `✅ Successfully logged out `,
-    });
-    setTimeout(() => {
-      setShowToast(false);
-    }, 2500);
-    localStorage.removeItem("token");
-    setGetToken("");
-    navigate("/", { replace: true });
-  };
 
   const logoHandler = () => {
     navigate("/");
@@ -63,7 +48,6 @@ export function Header() {
         <div className="left">
           <a href="#">About Us</a>
           <a href="#">Privacy Policy</a>
-          <a href="#">Order Tracking</a>
           <Link to="store">Store</Link>
         </div>
         <div className="right">
@@ -97,12 +81,15 @@ export function Header() {
           />
         </div>
         <div>
-          <ul className="nav-links">
+          <ul className="nav-links ">
+            <li className="store-link ">
+              <Link to="/store">Explore</Link>
+            </li>
             <li>
               {authToken ? (
-                <button className="btn btn-danger" onClick={logoutHandler}>
-                  Logout
-                </button>
+                <Link to="/profile" className="my-icon">
+                  <UserIcon />
+                </Link>
               ) : (
                 <Link to="/login">
                   <button className="btn btn-primary">Login</button>

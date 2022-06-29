@@ -1,0 +1,39 @@
+.customModal {
+    max-width: 500px;
+    width: 100%;
+}
+
+.checkout-address-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding: 1rem;
+    border: 1px dashed blue
+}
+
+.address-label {
+    cursor: pointer;
+}
+
+.address-label>p {
+    margin: 0;
+}
+
+.checkout-btn {
+    display: flex;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    width: 15rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    justify-content: center;
+}
+
+/* toastify */
+.Toastify__toast-body {
+
+    font-size: 16px !important;
+
+}

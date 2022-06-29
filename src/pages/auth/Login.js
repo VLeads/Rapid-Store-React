@@ -9,6 +9,7 @@ import {
 } from "utils";
 import "./auth.css";
 import { Toast } from "components";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const location = useLocation();
@@ -46,18 +47,19 @@ export const Login = () => {
       );
       if (response.status === 200) {
         setIsLoggedin(true);
-        toastDispatch({
-          type: ACTION_TYPE_SUCCESS,
-          payload: `✅ Loggedin successfully ${response.data.foundUser.firstName}. Grab the best deals 🎉 `,
-        });
-        setShowToast(true);
+
+        toast.success(
+          `Loggedin successfully ${response.data.foundUser.firstName}. Grab the best deals 🎉`
+        );
 
         setTimeout(() => {
           navigate(-1 || "/", { replace: true });
-
-          setShowToast(false);
         }, 1800);
         localStorage.setItem("token", response.data.encodedToken);
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify(response.data.foundUser)
+        );
 
         setGetToken(response.data.encodedToken);
       }
@@ -65,32 +67,11 @@ export const Login = () => {
       const { status, statusText } = error?.response;
       console.log("test", error);
       if (status === 401 && statusText === "Unauthorized") {
-        toastDispatch({
-          type: ACTION_TYPE_ERROR,
-          payload: "⚠ You have entered either incorrect Email or Password",
-        });
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-        }, 2500);
+        toast.error("You have entered either incorrect Email or Password");
       } else if (status === 404 && statusText === "Not Found") {
-        toastDispatch({
-          type: ACTION_TYPE_ERROR,
-          payload: "⚠ Email is not registered",
-        });
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-        }, 2500);
+        toast.error("Email is not registered");
       } else {
-        toastDispatch({
-          type: ACTION_TYPE_ERROR,
-          payload: "⚠ Something Wrong Happened",
-        });
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-        }, 2500);
+        toast.error("Something wrong happened!");
       }
     }
   };
@@ -108,87 +89,87 @@ export const Login = () => {
 
   return (
     <div className="min-height">
-    <main className="auth-container">
-      <Toast />
-      <form
-        className="card-vertical signup-form"
-        onSubmit={(e) => submitLoginHandler(e)}
-      >
-        <h3>Login</h3>
+      <main className="auth-container">
+        <Toast />
+        <form
+          className="card-vertical signup-form"
+          onSubmit={(e) => submitLoginHandler(e)}
+        >
+          <h3>Login</h3>
 
-        <div className="input-group-parent">
-          <div className="input-group">
-            <label>Email address</label>
-            <input
-              className="input-box"
-              type="email"
-              placeholder="vishal@mail.com"
-              maxLength="42"
-              name="email"
-              onChange={inputChange}
-              value={loginFormData.email}
-              required
-            />
-          </div>
-
-          <div className="input-group ">
-            <label> Password </label>
-            <div className="password-input">
+          <div className="input-group-parent">
+            <div className="input-group">
+              <label>Email address</label>
               <input
                 className="input-box"
-                type={inputType}
-                placeholder="******"
-                name="password"
-                maxLength="28"
+                type="email"
+                placeholder="vishal@mail.com"
+                maxLength="42"
+                name="email"
                 onChange={inputChange}
-                value={loginFormData.password}
+                value={loginFormData.email}
                 required
               />
-              <div
-                type=""
-                className="password-eye-btn"
-                onClick={() => {
-                  togglePassword();
-                }}
-              >
-                <i
-                  className={`fa fa-eye${
-                    inputType === "password" ? "-slash" : ""
-                  }`}
-                  aria-hidden="true"
-                ></i>
+            </div>
+
+            <div className="input-group ">
+              <label> Password </label>
+              <div className="password-input">
+                <input
+                  className="input-box"
+                  type={inputType}
+                  placeholder="******"
+                  name="password"
+                  maxLength="28"
+                  onChange={inputChange}
+                  value={loginFormData.password}
+                  required
+                />
+                <div
+                  type=""
+                  className="password-eye-btn"
+                  onClick={() => {
+                    togglePassword();
+                  }}
+                >
+                  <i
+                    className={`fa fa-eye${
+                      inputType === "password" ? "-slash" : ""
+                    }`}
+                    aria-hidden="true"
+                  ></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="select-box">
-            <label style={{ cursor: "pointer" }}>
-              <input type="checkbox" />
-              Remember me
-            </label>
-            <a className="forgot-pass" href="">
-              Forgot your Password?
-            </a>
-          </div>
+            <div className="select-box">
+              <label style={{ cursor: "pointer" }}>
+                <input type="checkbox" />
+                Remember me
+              </label>
+              <a className="forgot-pass" href="">
+                Forgot your Password?
+              </a>
+            </div>
 
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
-          <button
-            className="btn btn-secondary"
-            onClick={(e) => {
-              e.preventDefault();
-              setLoginFormData(testLogin);
-            }}
-          >
-            Use test Credentials
-          </button>
-          <Link to="/signup" className="auth-alternative">
-            New on Rapid Store? Sign Up
-          </Link>
-        </div>
-      </form>
-    </main>
+            <button className="btn btn-primary" type="submit">
+              Login
+            </button>
+            <button
+              className="btn btn-secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                setLoginFormData(testLogin);
+              }}
+            >
+              Use test Credentials
+            </button>
+            <Link to="/signup" className="auth-alternative">
+              New on Rapid Store? Sign Up
+            </Link>
+          </div>
+        </form>
+      </main>
     </div>
   );
 };
