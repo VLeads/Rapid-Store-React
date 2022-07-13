@@ -46,3 +46,15 @@
     margin-top: 3rem;
     margin-left: auto;
 }
+
+@media only screen and (max-width: 720px) {
+    .profile_details {
+        font-size: 2rem;
+    }
+
+    .profile_header {
+        font-size: large;
+        font-weight: bold;
+
+    }
+}

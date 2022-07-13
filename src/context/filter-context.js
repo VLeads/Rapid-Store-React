@@ -131,7 +131,7 @@ const FilterProvider = ({ children }) => {
     searchFilteredData,
     state.sortByPrice
   );
-  console.log("test", priceSortedData);
+
   const categoryIncludedData = getCategoryIncludedData(
     priceSortedData,
     state.showCategory
@@ -140,7 +140,14 @@ const FilterProvider = ({ children }) => {
 
   return (
     <FilterContext.Provider
-      value={{ state, dispatch, filteredData, searchTerm, setSearchTerm }}
+      value={{
+        state,
+        dispatch,
+        filteredData,
+        searchTerm,
+        setSearchTerm,
+        filterSearch,
+      }}
     >
       {children}
     </FilterContext.Provider>
