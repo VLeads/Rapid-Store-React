@@ -42,6 +42,8 @@ export function Header() {
     };
   }
 
+  function searchHandler() {}
+
   return (
     <>
       <div className="sub-nav">

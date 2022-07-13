@@ -10,10 +10,21 @@ export const CartPriceCard = ({
   setResponseSummary,
 }) => {
   const [addressModalShow, setAddressModalShow] = useState(false);
+  const [finalPrice, setFinalPrice] = useState(0);
 
   const { totalPrice, discountPrice, items } = details;
 
   let deliveryCharges = 200;
+
+  const calculateFinalPrice = () => {
+    let grandTotal =
+      Number(totalPrice - discountPrice) > 349
+        ? totalPrice - discountPrice
+        : totalPrice - discountPrice + deliveryCharges;
+
+    setFinalPrice(grandTotal);
+  };
+
   return (
     <section className="price-detail-container">
       <div className="card-vertical price-details">
@@ -64,7 +75,10 @@ export const CartPriceCard = ({
 
         <button
           className="btn btn-primary order mt-3"
-          onClick={() => setAddressModalShow(true)}
+          onClick={() => {
+            setAddressModalShow(true);
+            calculateFinalPrice();
+          }}
         >
           Checkout
         </button>
@@ -73,11 +87,9 @@ export const CartPriceCard = ({
       <AddressFormModal
         show={addressModalShow}
         onHide={() => setAddressModalShow(false)}
-        totalPrice={totalPrice}
-        discountPrice={discountPrice}
-        deliveryCharges={deliveryCharges}
         responseSummary={responseSummary}
         setResponseSummary={setResponseSummary}
+        finalPrice={finalPrice}
       />
     </section>
   );

@@ -30,6 +30,9 @@
     padding-top: 4px
 }
 
+.circular-btn-disable {
+    background-color: #b4b1b1;
+}
 
 .cart-card-price-star {
     display: flex;

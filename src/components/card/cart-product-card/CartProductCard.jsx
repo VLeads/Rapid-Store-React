@@ -80,13 +80,15 @@ export const CartProductCard = ({ details }) => {
         <div className="card-footer">
           <div className="qty">
             Quantity:
-            {qty > 1 && (
+            {qty > 1 ? (
               <span
                 className="circular-btn"
                 onClick={() => handleQtyBtnClick("decrement")}
               >
                 −
               </span>
+            ) : (
+              <span className="circular-btn circular-btn-disable ">−</span>
             )}
             <span type="number" className="qty-input" placeholder="0">
               {qty}

@@ -11,28 +11,19 @@ import { toast } from "react-toastify";
 export const AddressFormModal = ({
   show,
   onHide,
-  totalPrice,
-  discountPrice,
-  deliveryCharges,
   responseSummary,
   setResponseSummary,
+  finalPrice,
 }) => {
   const [address, setAddress] = useState("");
 
   const [currUser, setCurrUser] = useState();
-  const [finalPrice, setFinalPrice] = useState(0);
 
   const { cart, deleteDataUsingApi: deleteCartItem } = useCart();
-  console.log("cart", cart);
 
   useEffect(() => {
     setCurrUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
-
-  let grandTotal =
-    Number(totalPrice - discountPrice) > 349
-      ? totalPrice - discountPrice
-      : totalPrice - discountPrice + deliveryCharges;
 
   const clearCart = () => {
     cart.data.forEach((el) => {
@@ -41,10 +32,8 @@ export const AddressFormModal = ({
   };
 
   const razorpayHandler = () => {
-    setFinalPrice(grandTotal);
     address?.length ? displayRazorpay() : toast.error("select address first");
   };
-
   const loadScript = async (url) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -117,6 +106,7 @@ export const AddressFormModal = ({
             id="address-1"
             name="user-address"
             value={address}
+            checked={address === "address-1"}
             onChange={() => setAddress("address-1")}
           />
           <label className="address-label" htmlFor="address-1">
@@ -130,6 +120,7 @@ export const AddressFormModal = ({
             id="address-2"
             name="user-address"
             value={address}
+            checked={address === "address-2"}
             onChange={() => setAddress("address-2")}
           />
           <label className="address-label" htmlFor="address-2">

@@ -50,7 +50,7 @@ function App() {
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
-      <ToastContainer position="top-center" />
+      <ToastContainer position="top-center" autoClose={1250} />
     </div>
   );
 }
