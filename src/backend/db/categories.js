@@ -42,7 +42,7 @@ export const categories = [
     _id: uuid(),
     img: {
       altText: "Mobiles",
-      url: "https://expertreviews.b-cdn.net/sites/expertreviews/files/styles/er_main_wide/public/2022/02/samsung-galaxy-s22-plus-hands-on-review-2.jpg?itok=X2A8QwgJ",
+      url: "https://www.globalbrandsmagazine.com/wp-content/uploads/2023/01/Top-10-Mobile-Brands-in-World.jpg",
     },
     name: "Mobiles",
   },

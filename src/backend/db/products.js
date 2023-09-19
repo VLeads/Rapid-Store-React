@@ -10,7 +10,7 @@ export const products = [
     _id: uuid(),
     img: {
       altText: "store-product",
-      url: "https://www.linkpicture.com/q/headphone.jpeg",
+      url: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-skyblue-202011_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1604686090000",
     },
     heading: "APPLE Airpods (3rd Generation) Bluetooth Headset...",
     price: {
@@ -27,7 +27,7 @@ export const products = [
     _id: uuid(),
     img: {
       altText: "store-product",
-      url: "https://www.linkpicture.com/q/laptop_2.png",
+      url: "https://cdn1.smartprix.com/rx-iGRFHO16w-w1200-h1200/GRFHO16w.jpg",
     },
     heading: "ASUS ROG St. alpha product line series sample item ...",
     price: {
@@ -108,7 +108,7 @@ export const products = [
     _id: uuid(),
     img: {
       altText: "store-product",
-      url: "https://www.linkpicture.com/q/headphone.jpeg",
+      url: "https://m.media-amazon.com/images/I/51B46Uw59sS.jpg",
     },
     heading: "RPM Euro Games Premium Gaming Headphones...",
     price: {
