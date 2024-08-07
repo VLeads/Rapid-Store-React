@@ -76,7 +76,7 @@ export const products = [
     _id: uuid(),
     img: {
       altText: "store-product",
-      url: "https://www.linkpicture.com/q/game_2.jpg",
+      url: "https://images.unsplash.com/photo-1592155931584-901ac15763e3?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     heading: "Sony PlayStation 4 (PS4) Slim 500 GB with....",
     price: {
